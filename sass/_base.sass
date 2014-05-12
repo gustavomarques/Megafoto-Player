@@ -1,0 +1,306 @@
+// ------------------------------------------------------------------
+// colors
+// ------------------------------------------------------------------
+
+$branco: #fff
+$preto: #2c2c2c
+$black: #000
+
+$azul: #00a4e0
+$azulEscuro: #003e54
+$amarelo: #f4ff00
+$roxo: #a626ff
+$verdeLimao: #8cff26
+$magenta: #ff2687
+$azulLight: #26d9ff
+$laranja: #ff7826
+$vermelho: #ca0505
+$vermelhoEscuro: #830000
+$verde: #68ff40
+$verdeEscuro: #2a8511
+$marrom: #402d21
+
+$brancoCinza: #f7f7f7
+$cinzaClaro: #b1b3b6
+$cinza: #9c9c9c
+$cinzaEscuro: #414042
+
+
+
+$corPrincipal: $verde
+$corPrincipalEscuro: $verdeEscuro
+$corBg: rgba($black, 0.7)
+$corBgInverso: rgba($branco, 0.9)
+$corTexto: $brancoCinza
+$corTextoInverso: $preto
+
+
+
+// ------------------------------------------------------------------
+// Scroll css3
+// ------------------------------------------------------------------ 
+
+$corScroll: $verde
+$corFundoScroll: $cinzaEscuro
+
+::-webkit-scrollbar 
+	width: 3px
+	height: 0px
+	margin: 0px 0px 0px 0px
+
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment 
+	display: block
+	height: 0px
+
+
+::-webkit-scrollbar-button:vertical:increment 
+	background-color: none
+
+
+::-webkit-scrollbar-track-piece 
+	background-color: $corFundoScroll
+
+
+::-webkit-scrollbar-thumb:vertical 
+	height: 50px
+	background-color: $corScroll
+	cursor: pointer
+
+
+::-webkit-scrollbar-thumb:horizontal 
+	width: 50px
+	background-color: $corScroll
+	cursor: pointer
+
+
+// ------------------------------------------------------------------
+// Tipography
+// ------------------------------------------------------------------
+
+//@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400)
+@import fonts/mf-player/style.css
+@import fonts/antonio/stylesheet.css
+
+
+@mixin fontIcon
+	font-family: 'mf-player'
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+
+@mixin fontLight
+	font-family: 'antoniolight'
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	
+@mixin fontRegular
+	font-family: 'antonioregular'
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+@mixin fontBold
+	font-family: 'antoniobold'
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+
+// ------------------------------------------------------------------
+// Defaults do Compass
+// ------------------------------------------------------------------
+$default-transition-property : all
+$default-transition-duration : 0.3s
+$default-transition-function : false
+$default-transition-delay    : false
+
+$default-text-shadow-color: #fff
+$default-text-shadow-h-offset: 1px
+$default-text-shadow-v-offset: 1px
+$default-text-shadow-blur: 1px
+
+$default-box-shadow-color: rgba(0,0,0,0.3)
+$default-box-shadow-h-offset: 0
+$default-box-shadow-v-offset: 2px
+$default-box-shadow-blur: 4px
+$default-box-shadow-spread: 0
+$default-box-shadow-inset: false
+
+
+
+
+// ------------------------------------------------------------------
+// Styles Base
+// ------------------------------------------------------------------
+
+body
+	+fontRegular
+
+p
+	line-height: 150%
+	font-size: 14px
+	margin-bottom: 20px
+		
+b
+	+fontBold
+
+a
+	text-decoration: none
+	+transition
+	color: $corPrincipal
+
+	&:hover
+		color: $corPrincipalEscuro
+
+
+h1, h2, h3, h4, h5, h6
+	+fontBold
+	margin-bottom: 20px
+	line-height: 130%
+
+h1
+	font-size: 40px
+
+h2
+	font-size: 30px
+
+h3
+	font-size: 25px
+
+h4
+	font-size: 20px
+
+h5
+	font-size: 18px
+
+h6
+	font-size: 16px
+
+
+
+// ------------------------------------------------------------------
+// Form styles
+// ------------------------------------------------------------------
+
+input, button, select, textarea
+	cursor: pointer !important
+	&:focus
+		outline: none
+
+input
+	+border-radius(5px)
+
+
+
+input, input[type="text"], select, textarea, .ms-parent > button
+	+border-radius(5px)
+	+box-sizing(border-box)
+	+fontRegular
+	display: block
+	float: none
+	position: relative
+	font-size: 15px
+	padding: 0 10px
+	border: 2px solid $cinzaClaro
+	text-indent: 0
+	color: $preto
+	width: 100%
+	min-height: 35px
+	line-height: 35px
+
+	&:focus
+		border-color: $corBg
+
+input[type="text"]
+	background: $branco
+
+textarea
+	min-height: 60px
+
+@mixin button3d
+	+fontBold
+	padding: 8px 20px 12px 20px
+	font-size: 20px
+	line-height: 20px
+	text-decoration: none
+	border: none
+	text-transform: uppercase
+	text-align: center
+	color: $branco
+	background: $corPrincipalEscuro
+	cursor: pointer
+	+box-sizing(border-box)
+	+border-radius(5px)
+	+box-shadow(rgba($black, 0.1) 0 -5px 0 inset)
+	+transition
+	opacity: 0.9
+
+	&:hover
+		+box-shadow(rgba($black, 0.3) 0 -5px 0 inset)
+		opacity: 1
+
+
+@mixin select
+	background: $branco url(img/form-select.png) right center no-repeat
+	padding-right: 36px
+	+appearance(none)
+
+
+@mixin checkbox
+	background: $brancoCinza
+	width: 25px
+	height: 25px
+	+appearance(none)
+	+border-radius(5px)
+	+transition
+
+	&:checked
+		background: $corPrincipal url(img/form-checkbox-w.png) center center no-repeat
+		+animate(pulseCheck)
+
+input[type="checkbox"]
+	+checkbox
+
+@mixin radio
+	background: $brancoCinza
+	width: 25px
+	height: 25px
+	+appearance(none)
+	+border-radius(50%)
+	+transition
+
+	&:checked
+		background: $corPrincipal url(img/form-radio-w.png) center center no-repeat
+		+animate(pulseCheck)
+
+input[type="submit"], input[type="button"], button, .button3d
+	+button3d
+	margin-top: 20px
+
+
+@mixin uploadBt
+	background: $brancoCinza
+	+appearance(none)
+
+
+html.no-ie
+	select
+		+select
+
+	input[type="checkbox"]
+		+checkbox
+
+	input[type="radio"]
+		+radio
+
+	//input[type="file"]
+	//	+uploadBt
+	//	+button3d
+

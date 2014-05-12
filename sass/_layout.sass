@@ -1,0 +1,1122 @@
+// ------------------------------------------------------------------
+// General
+// ------------------------------------------------------------------
+
+
+#pano
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: url(img/temp/pano2.jpg) center center no-repeat
+	+bgCover
+	z-index: -1
+
+
+#logo
+	background: url(img/megafoto.png) center center no-repeat
+	width: 200px
+	height: 25px
+	bottom: 20px
+	left: 20px
+	position: fixed
+	opacity: 0.7
+	z-index: 0
+	
+	&:hover
+		opacity: 1
+
+#btUser
+	position: fixed
+	top: 10px
+	left: 10px
+	display: block
+	width: 70px
+	height: 25px
+	cursor: pointer
+	z-index: 99
+	background: $corBg
+	padding: 8px
+	+border-radius(5px)
+	@include transition-duration(.5s)
+
+	span
+		position: absolute
+		top: 50%
+		display: block
+		width: 25px
+		height: 3px
+		margin-top: -2px
+		background-color: #fff
+		font-size: 0px
+		-webkit-touch-callout: none
+		-webkit-user-select: none
+		-khtml-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+		-webkit-transition: background-color 0.3s
+		transition: background-color 0.3s
+
+	b
+		display: block
+		height: 25px
+		line-height: 27px
+		font-size: 17px
+		color: $corTexto
+		text-transform: uppercase
+		padding-left: 33px
+		opacity: 1
+		visibility: visible
+		+transition
+		+transition-delay(0.3s)
+
+	&.open
+		left: 190px
+		width: 25px
+		b
+			opacity: 0
+			visibility: hidden
+			+transition-delay(0s)
+
+#btUser.open span
+	background-color: transparent
+
+#btUser span
+	&:before, &:after
+		position: absolute
+		left: 0
+		width: 100%
+		height: 100%
+		background: #fff
+		content: ''
+		-webkit-transition: -webkit-transform 0.3s
+		transition: transform 0.3s
+	&:before
+		-webkit-transform: translateY(-200%)
+		transform: translateY(-200%)
+	&:after
+		-webkit-transform: translateY(200%)
+		transform: translateY(200%)
+
+#btUser.open span
+	&:before
+		-webkit-transform: translateY(0) rotate(45deg)
+		transform: translateY(0) rotate(45deg)
+	&:after
+		-webkit-transform: translateY(0) rotate(-45deg)
+		transform: translateY(0) rotate(-45deg)
+
+
+#userNav
+	position: fixed
+	top: 0
+	bottom: 0
+	left: -240px
+	width: 240px
+	background: $corBg
+	display: block
+	z-index: 98
+
+	*
+		+fontRegular
+		color: $corTexto
+
+	#user
+		height: 240px
+		width: 240px
+		position: relative
+		display: block
+		border-bottom: 2px solid $corPrincipal
+		img
+			width: 100%
+
+		span
+			position: absolute
+			background: $corBg
+			padding: 10px 20px
+			bottom: 0
+			left: 0
+			right: 0
+			display: block
+
+			h1
+				font-size: 24px
+				text-transform: uppercase
+				+fontLight
+				color: $corTexto
+				margin-bottom: 0
+				width: 100%
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+
+			p
+				font-size: 14px
+				margin-bottom: 0
+	#amigos
+		height: 97px
+		display: block
+		text-align: center
+		padding: 10px
+		border-bottom: 1px solid rgba($brancoCinza, 0.3)
+
+		*
+			+transition
+
+		span
+			+fontIcon
+			font-size: 50px
+			display: block
+			margin-bottom: 10px
+
+		p
+			font-size: 13px
+			color: $cinza
+
+			b
+				display: block
+				color: $brancoCinza
+				font-size: 16px
+				text-transform: uppercase
+
+		&:hover
+			background: $corBg
+			span
+				+scale(0.4)
+				margin-top: -10px
+				opacity: 0
+			p
+				+scale(1.4)
+				margin-top: -20px
+
+
+	nav
+		position: absolute
+		top: 360px
+		bottom: 0px
+		display: block
+		width: 100%
+		overflow: auto
+		padding-bottom: 20px
+		$alturaLink: 45px
+		a
+			height: $alturaLink
+			//border-bottom: 1px solid rgba($brancoCinza, 0.3)
+			color: $brancoCinza
+			display: block
+			float: none
+			width: 100%
+			line-height: $alturaLink
+			text-transform: uppercase
+			font-size: 16px
+			opacity: 0.7
+			padding-left: 60px
+			position: relative
+
+			&:before
+				+fontIcon
+				font-size: $alturaLink
+				line-height: $alturaLink
+				text-align: center
+				width: 60px
+				position: absolute
+				left: 0
+				display: block
+				+transition
+				+scale(0.6)
+				
+
+			&:hover
+				opacity: 1
+				text-decoration: none
+				background: $corBg
+
+				&:before
+					+scale(0.9)
+
+
+
+
+#placarWrapper
+	position: absolute
+	top: 10px
+	left: 50%
+	margin-left: -160px
+	width: 320px
+	height: 90px
+	overflow: visible
+
+	#slides
+		background: url(img/placar-bg.png) top center no-repeat
+		position: absolute
+		top: 0
+		width: 320px
+		height: 82px
+		z-index: 2
+		+box-sizing(border-box)
+		overflow: hidden
+
+		li
+			display: block
+			margin: 3px 3px 4px 3px
+			width: 314px
+			height: 75px
+
+			&#tags
+				text-align: center
+				display: block
+				padding: 0 60px
+				background: url(img/placar-tags.png) top center no-repeat
+				+box-sizing(border-box)
+
+				span
+					+fontBold
+					font-size: 16px
+					color: $cinza
+					display: block
+					line-height: 30px
+					left: -5px
+					position: relative
+
+					&:before
+						+fontIcon
+						content: "\e652"
+
+					&#total
+						font-size: 32px
+						color: $brancoCinza
+						line-height: 46px
+
+					&#timeA, &#timeB
+						float: left
+						width: 97px
+						text-align: center
+
+					&#timeB
+						float: right
+
+
+	#infos
+		background: url(img/placar-footer.png) bottom center no-repeat
+		top: 70px
+		min-height: 0px
+		padding-bottom: 20px
+		width: 320px
+		position: absolute
+		display: block
+		+transition
+		z-index: 1
+		+clearfix
+
+		& > section
+			display: block
+			height: 0
+			+clearfix
+			background: $corBg
+			width: 320px
+			+box-sizing(border-box)
+			display: block
+			+transition
+			+clearfix
+
+			& > nav
+				width: 320px
+				height: 42px
+				display: block
+
+				a
+					width: 33.3%
+					text-align: center
+					padding-top: 12px
+					float: left
+					height: 30px
+					line-height: 30px
+					background: rgba($corBgInverso, 0.3)
+					color: $corTexto
+					text-transform: uppercase
+					font-size: 14px
+
+					&.selected
+						background: none
+
+			& > div
+				padding: 20px 20px 10px 20px
+				display: block
+				
+				header
+					display: block
+					height: 30px
+					padding: 10px 0
+					margin-bottom: 15px
+
+					h1
+						text-align: center
+						+fontLight
+						color: $corTexto
+						display: block
+						font-size: 26px
+						line-height: 30px
+						text-transform: uppercase
+
+				h2
+					color: $cinza
+					font-size: 18px
+					+fontLight
+					display: block
+
+					b
+						+fontLight
+						color: $corTexto
+
+				&#escalacao
+
+					table
+						display: table
+						width: 100%
+						color: $corTexto
+						text-align: center
+						text-transform: uppercase
+						thead
+							th
+								font-size: 16px
+								text-align: center
+								height: 25px
+								line-height: 25px
+								border: 1px solid $cinzaEscuro
+							
+						tr
+							td
+								+fontLight
+								font-size: 12px
+								padding: 3px 5px
+								border: 1px solid $cinzaEscuro
+
+				&#gols
+					h2
+						text-align: center
+						b
+							display: block
+							font-size: 28px
+							+fontBold
+							line-height: 140%
+							margin-bottom: 20px
+							text-transform: uppercase
+
+	&:hover
+		#infos
+			& > section
+				height: 380px
+
+
+#btFullscreen
+	position: fixed
+	top: 10px
+	right: 10px
+	display: block
+	width: 25px
+	height: 25px
+	cursor: pointer
+	z-index: 99
+	background: $corBg
+	padding: 8px
+	+border-radius(5px)
+	@include transition-duration(.5s)
+	+fontIcon
+	color: $corTexto
+
+	&:hover
+		text-decoration: none
+
+	&:before
+		font-size: 26px
+		content: "\e607"
+
+	&.active
+		&:before
+			content: "\e608"
+		
+#krControls
+	display: block
+	width: 160px
+	height: 390px
+	position: fixed
+	bottom: 10px
+	right: 20px
+	background: url(img/temp/krControls.png) center center no-repeat
+
+#marcarWrapper
+	position: fixed
+	bottom: 10px
+	width: 320px
+	left: 50%
+	margin-left: -160px
+	background: red
+	height: 70px
+
+// ------------------------------------------------------------------
+// Modais
+// ------------------------------------------------------------------
+
+.md-modal
+	> iframe
+		position: fixed
+		bottom: -100px
+		left: 50%
+		margin-left: -350px
+		display: none
+		height: 65px
+		width: 700px
+
+	&.md-show
+		> iframe
+			display: block
+			+transition-delay(3.5s)
+			+animate(fadeInUp)
+
+
+.md-modal
+	.content
+		.step
+			display: none
+			text-align: center
+			position: absolute
+			left: 30px
+			right: 30px
+			top: 30px
+			bottom: 30px
+
+			> header
+				h1
+					+fontLight
+					font-size: 26px
+					text-align: center
+
+				a.voltar
+					font-size: 25px
+					line-height: 25px
+					+border-radius(50%)
+					border: 3px solid $branco
+					color: $branco
+					position: absolute
+					top: 0
+					left: 0
+					display: block
+					width: 25px
+					+fontIcon
+			
+			button
+				float: right
+
+			&.active
+				display: block
+				+animate(fadeIn)
+
+	&#modal-amigos
+		header
+			padding-left: 20px
+			padding-right: 260px
+			h1
+				text-align: left
+
+			form
+				position: absolute
+				display: block
+				right: 60px
+				top: 10px
+				height: 40px
+				width: 200px
+
+				*
+					display: inline-block
+
+				input
+					+border-radius(5px 0 0 5px)
+					width: 160px
+					float: left
+					display: block
+
+				button
+					+border-radius(0 5px 5px 0)
+					+fontIcon
+					padding: 0
+					float: right
+					display: block
+					width: 40px
+					height: 40px
+					background: $corBg
+					color: $corTexto
+					margin: 0
+
+		.content
+			padding-top: 10px
+			padding-bottom: 10px
+			& > nav
+				text-align: center
+				a
+					display: inline-block
+					width: 150px
+					height: auto
+					position: relative
+					opacity: 0.5
+					+transition
+					background: $black
+
+					img
+						width: 100%
+						display: block
+						+desaturate()
+
+					h1
+						+fontLight
+						padding: 10px
+						background: rgba($black, 0.6)
+						position: absolute
+						bottom: 0
+						left: 0
+						right: 0
+						margin: 0
+						font-size: 14px
+						text-align: center
+						text-transform: uppercase
+						white-space: nowrap
+						overflow: hidden
+						text-overflow: ellipsis
+						color: $corTexto
+						display: block
+
+					&:hover
+						+scale(1.2)
+						opacity: 1
+						z-index: 2
+						img
+							+desaturate($gray: 0)
+		&.md-scroll .content
+			padding-left: 0
+			padding-right: 0
+
+	&#modal-share
+		.content
+			height: 320px
+			display: block
+
+			.step.share-tipo
+				> a
+					+buttonFlat
+
+			.step.share-email
+				form
+					input
+						width: 48%
+						float: left
+						&:nth-of-type(2n+2)
+							margin-left: 4%
+							margin-bottom: 20px
+					
+					textarea
+						height: 90px
+
+			.step.share-facebook
+				textarea
+					height: 40px
+
+				.preview
+					display: block
+					margin-top: 20px
+					+clearfix
+					text-align: left
+					border: 2px solid rgba($corPrincipal, 0.2)
+
+					h1
+						+fontLight
+						border-bottom: 2px solid rgba($branco, 0.1)
+						font-size: 17px
+						padding: 15px 0
+						background: $corBg
+						margin-bottom: 0
+
+					img
+						display: block
+						width: 120px
+						height: 120px
+						float: left
+						margin-right: 30px
+
+					p
+						display: block
+						padding-right: 30px
+						color: $cinzaClaro
+
+	&#modal-print
+		.content
+			height: 320px
+			display: block
+
+			.bt-pay
+				+buttonFlat
+				float: right
+				margin-right: 10px
+
+			.step.print-tipo
+				.preview
+					+buttonFlat
+					width: 100%
+					padding: 2%
+					margin: 0 0 10px 0 
+					position: relative
+					overflow: hidden
+					
+					img
+						width: 100%
+						+border-radius(5px)
+
+					span
+						+transition
+						+border-radius(5px)
+						position: absolute
+						left: 50%						
+						top: 50%
+						width: 100%
+						+translate(-50%, -50%)
+						background: rgba(0,0,0, 0.7)
+						font-size: 26px
+						text-transform: uppercase
+						color: $corTexto
+						padding: 20% 0
+						margin: 0
+						+fontLight
+						opacity: 1
+
+					&:hover
+						span
+							opacity: 0
+
+
+				.tipos 
+					& > a
+						+buttonFlat
+						width: 190px
+						span
+							+fontBold
+							font-size: 40px
+
+				& > span
+					+fontBold
+					font-size: 12px
+					color: $corTexto
+
+			.step.print-pdf
+				& > ul
+					display: block
+					margin-bottom: 20px
+					li
+						text-align: left
+						display: block
+						line-height: 140%
+						padding: 8px
+						padding-left: 20px
+						position: relative
+						&:before
+							+fontIcon
+							content: "\e60c"
+							position: absolute
+							top: 10px
+							left: 0
+							font-size: 15px
+
+			.step.print-papel
+				form
+					display: block
+					+clearfix
+
+					&.print-form-cep
+						input, button
+							margin: 0 0 0 0
+							float: left
+							
+						input
+							width: 70%
+							+border-radius(5px 0 0 5px)
+							
+						button
+							width: 30%
+							+border-radius(0 5px 5px 0)
+
+					&.print-form-full
+						input
+							float: left
+							margin-bottom: 20px
+							&.nome
+								width: 62%
+							&.cep
+								width: 35%
+								margin-left: 3%
+							&.endereco
+								width: 100%
+							&.numero
+								width: 20%
+							&.uf
+								width: 19%
+								margin-left: 3%
+								margin-right: 3%
+							&.cidade
+								width: 55%
+
+						.bt-pay
+							margin-top: 20px
+				
+				& > ul
+					display: block
+					margin-bottom: 20px
+					li
+						text-align: left
+						display: block
+						line-height: 140%
+						padding: 8px
+						padding-left: 20px
+						position: relative
+						&:before
+							+fontIcon
+							content: "\e60c"
+							position: absolute
+							top: 10px
+							left: 0
+							font-size: 15px
+
+				.resultado
+					text-align: left
+					p
+						+fontLight
+						font-size: 16px
+						margin-bottom: 0
+						margin-top: 10px
+
+					h1
+						font-size: 20px
+						margin-bottom: 0
+						margin-top: 5px
+
+				.frete
+					position: relative
+					top: -100px
+					left: 0
+					text-align: left
+					width: 200px
+					p
+						+fontLight
+						font-size: 12px
+						margin-bottom: 10px
+
+					h1
+						font-size: 14px
+						margin-bottom: 0
+						margin-top: 5px
+	&#modal-maisMegas
+		.content
+			padding: 0
+			& > nav
+				a
+					display: block
+					+clearfix
+					text-align: left
+					border-bottom: 1px solid $cinzaEscuro
+					border-top: 1px solid $cinzaEscuro
+					position: relative
+					padding: 20px 20px 20px 290px
+					opacity: 0.5
+
+					*
+						+transition
+
+					img
+						display: block
+						position: absolute
+						top: 0
+						left: 0
+						width: 270px
+						+desaturate($gray:100%)
+
+					h1
+						+fontLight
+						font-size: 20px
+						margin-bottom: 15px
+						color: $corTexto
+
+					span
+						display: block
+						color: $cinzaClaro
+						padding-top: 10px
+						font-size: 14px
+
+					&:hover
+						opacity: 1
+						background: $corBg
+						img
+							+desaturate($gray:0%)
+
+			& > a
+				text-align: center
+				+buttonFlat
+				display: block
+				width: auto
+				+translateY(10px)
+
+	&#modal-logout
+		.content
+			text-align: center
+			& > a
+				+buttonFlat
+				width: auto
+
+
+// ------------------------------------------------------------------
+// Alert modal - Like por exemplo
+// ------------------------------------------------------------------
+.alert
+	position: fixed
+	top: 30%
+	left: 50%
+	width: 360px
+	margin-left: -200px
+	height: auto
+	z-index: 2000
+	padding: 20px 20px 30px 20px
+	+border-radius(10px)
+	background: rgba($black, 0.7)
+	border: 5px solid rgba($branco, 0.1)
+	text-align: center
+	display: block
+	visibility: hidden
+
+
+	h1
+		color: $corTexto
+		text-transform: uppercase
+		font-size: 36px
+
+	p
+		color: $corTexto
+		opacity: 0.8
+	
+	.progress
+		width: 0
+		height: 4px
+		background: $corPrincipal
+		position: absolute
+		bottom: 5px
+		left: 2%
+		+border-radius(3px)
+
+	*:last-child
+		margin-bottom: 0
+	
+	&.error
+		background: rgba($vermelhoEscuro, 0.7)
+		.progress
+			background: rgba($preto, 0.8)
+
+	&.sucess
+		background: rgba($corPrincipalEscuro, 0.7)
+		.progress
+			background: rgba($preto, 0.8)
+
+	&.active
+		//+animate(bounceOut)
+		-webkit-animation: fadeOut 3s linear forwards
+		-moz-animation: fadeOut 3s linear forwards
+		-o-animation: fadeOut 3s linear forwards
+		-ms-animation: fadeOut 3s linear forwards
+		animation: fadeOut 3s linear forwards
+
+		.progress
+			-webkit-animation: runProgress 2s linear forwards 0.5s
+			-moz-animation: runProgress 2s linear forwards 0.5s
+			-o-animation: runProgress 2s linear forwards 0.5s
+			-ms-animation: runProgress 2s linear forwards 0.5s
+			animation: runProgress 2s linear forwards 0.5s
+
+@-webkit-keyframes fadeOut
+	0%
+		opacity: 0
+		visibility: visible
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+		-webkit-transform: translateY(0px)
+	99%
+		opacity: 0
+		-webkit-transform: translateY(-30px)
+	100%
+		opacity: 0
+		visibility: hidden
+
+
+@-moz-keyframes fadeOut
+	0%
+		opacity: 0
+		visibility: visible
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+		-moz-transform: translateY(0px)
+	99%
+		opacity: 0
+		-moz-transform: translateY(-30px)
+	100%
+		opacity: 0
+		visibility: hidden
+
+
+@-o-keyframes fadeOut
+	0%
+		opacity: 0
+		visibility: visible
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+		-o-transform: translateY(0px)
+	99%
+		opacity: 0
+		-o-transform: translateY(-30px)
+	100%
+		opacity: 0
+		visibility: hidden
+
+
+@-ms-keyframes fadeOut
+	0%
+		opacity: 0
+		visibility: visible
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+		-ms-transform: translateY(0px)
+	99%
+		opacity: 0
+		-ms-transform: translateY(-30px)
+	100%
+		opacity: 0
+		visibility: hidden
+
+
+@keyframes fadeOut
+	0%
+		opacity: 0
+		visibility: visible
+	10%
+		opacity: 1
+	90%
+		opacity: 1
+		transform: translateY(0px)
+	99%
+		opacity: 0
+		transform: translateY(-30px)
+	100%
+		opacity: 0
+		visibility: hidden
+
+
+@-webkit-keyframes runProgress
+	0%
+		width: 0%
+	100%
+		width: 96%
+
+
+@-moz-keyframes runProgress
+	0%
+		width: 0%
+	100%
+		width: 96%
+
+
+@-o-keyframes runProgress
+	0%
+		width: 0%
+	100%
+		width: 96%
+
+
+@-ms-keyframes runProgress
+	0%
+		width: 0%
+	100%
+		width: 96%
+
+
+@keyframes runProgress
+	0%
+		width: 0%
+	100%
+		width: 96%
+
+
+// ------------------------------------------------------------------
+// 
+// ------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// 
+// ------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// Apagar depois
+// ------------------------------------------------------------------
+
+#testes
+	position: fixed
+	display: block
+	width: 600px
+	left: 0
+	bottom: 0
+	z-index: 2000
+	background: rgba($vermelhoEscuro, 0.9)
+	padding: 10px
+	height: auto
+
+	a
+		color: $branco
+		display: inline-block
+		padding: 10px
+		margin: 10px
+		background: $corBg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

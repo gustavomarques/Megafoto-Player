@@ -1,0 +1,75 @@
+
+// ------------------------------------------------------------------
+// Mixins
+// ------------------------------------------------------------------
+
+@mixin transition($t:all)
+	@include transition-property($t)
+	@include transition-duration(.3s)
+
+@mixin bgCover
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+@mixin alertBall
+	width: 18px
+	height: 18px
+	background: $vermelho
+	+border-radius(50%)
+	border: 1px solid $vermelhoEscuro
+	position: absolute
+	font-size: 11px
+	font-family: $fontBold
+	text-align: center
+	line-height: 18px
+	color: $branco
+
+@mixin desaturate($gray:100%)
+	filter: grayscale($gray)
+	-webkit-filter: grayscale($gray)
+	-moz-filter: grayscale($gray)
+	-ms-filter: grayscale($gray)
+	-o-filter: grayscale($gray)
+
+@mixin bordinha
+	+box-shadow(rgba(0,0,0, 0.5) 0 -1px 0 0 inset, rgba(255,255,255, 0.1) 0 1px 0 0 inset)
+
+
+@mixin bordinha2
+	+box-shadow(rgba(0,0,0, 0.5) 0 1px 0 0 inset, rgba(255,255,255, 0.1) 0 -1px 0 0 inset)
+
+@mixin buttonFlat
+	display: inline-block
+	position: relative
+	min-width: 140px
+	height: auto
+	margin: 30px
+	padding: 20px
+	opacity: 0.9
+	background: rgba($branco, 0.85)
+	color: $corTextoInverso
+	font-size: 20px
+	text-align: center
+	text-transform: uppercase
+	+fontLight
+	+border-radius(10px)
+	+box-sizing(border-box)
+	+box-shadow(rgba($corBg, 0.8) 0 0px 0 15px, rgba($corBg, 0.2) 0 -10px 0 0 inset)
+	opacity: 0.8
+
+	span
+		+fontIcon
+		display: block
+		font-size: 80px
+		text-align: center
+		line-height: 100%
+		margin-top: -10px
+		padding-bottom: 10px
+
+	&:hover
+		opacity: 1
+		background: rgba($branco, 1)
+		+box-shadow(rgba($corPrincipalEscuro, 0.7) 0 0px 0 15px, rgba($corBg, 0.2) 0 -5px 0 0 inset)
+
