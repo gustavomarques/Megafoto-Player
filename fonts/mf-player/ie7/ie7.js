@@ -13,6 +13,12 @@
 		el.innerHTML = '<span style="font-family: \'mf-player\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'mficon-mf-sound-on': '&#xe653;',
+		'mficon-mf-sound-off': '&#xe65a;',
+		'mficon-mf-next': '&#xe646;',
+		'mficon-mf-close': '&#xe647;',
+		'mficon-mf-check': '&#xe64a;',
+		'mficon-mf-back': '&#xe64c;',
 		'mficon-share': '&#xe60d;',
 		'mficon-marcar': '&#xe626;',
 		'mficon-logout': '&#xe627;',
@@ -75,9 +81,7 @@
 		'mficon-safari': '&#xe61c;',
 		'mficon-microphone': '&#xe648;',
 		'mficon-checkmark': '&#xe649;',
-		'mficon-checkmark2': '&#xe64a;',
 		'mficon-cancel': '&#xe64b;',
-		'mficon-cancel2': '&#xe64c;',
 		'mficon-plus': '&#xe64d;',
 		'mficon-plus2': '&#xe64e;',
 		'mficon-minus': '&#xe64f;',

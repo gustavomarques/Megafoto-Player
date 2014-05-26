@@ -2582,3 +2582,70 @@
 .zoomOutUp
   -webkit-animation-name: zoomOutUp
   animation-name: zoomOutUp
+
+
+
+
+      
+// ------------------------------------------------------------------
+// guto effects
+// ------------------------------------------------------------------
+
+
+@-webkit-keyframes scaleIn
+  0%
+    opacity: 0
+    -webkit-transform: scale(0.3)
+    transform: scale(0.3)
+  100%
+    opacity: 1
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+
+@keyframes scaleIn
+  0%
+    opacity: 0
+    -webkit-transform: scale(0.3)
+    -ms-transform: scale(0.3)
+    transform: scale(0.3)
+  100%
+    opacity: 1
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+
+
+.scaleIn
+  -webkit-animation-name: scaleIn
+  animation-name: scaleIn
+
+
+
+@-webkit-keyframes scaleOut
+  0%
+    opacity: 1
+    -webkit-transform: scale(1)
+    transform: scale(1)
+  100%
+    opacity: 0
+    -webkit-transform: scale(0.3)
+    transform: scale(0.3)
+
+
+@keyframes scaleOut
+  0%
+    opacity: 1
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+  100%
+    opacity: 0
+    -webkit-transform: scale(0.3)
+    -ms-transform: scale(0.3)
+    transform: scale(0.3)
+
+
+.scaleOut
+  -webkit-animation-name: scaleOut
+  animation-name: scaleOut

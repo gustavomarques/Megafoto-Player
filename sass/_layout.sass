@@ -314,7 +314,7 @@
 			display: block
 			height: 0
 			+clearfix
-			background: $corBg
+			background: rgba(0,0,0,0.8)
 			width: 320px
 			+box-sizing(border-box)
 			display: block
@@ -363,8 +363,9 @@
 				h2
 					color: $cinza
 					font-size: 18px
-					+fontLight
+					+fontRegular
 					display: block
+					margin-bottom: 10px
 
 					b
 						+fontLight
@@ -409,42 +410,90 @@
 			& > section
 				height: 380px
 
-
-#btFullscreen
+#topButtons
 	position: fixed
 	top: 10px
 	right: 10px
 	display: block
-	width: 25px
-	height: 25px
-	cursor: pointer
-	z-index: 99
-	background: $corBg
-	padding: 8px
-	+border-radius(5px)
-	@include transition-duration(.5s)
-	+fontIcon
-	color: $corTexto
+	text-align: right
 
-	&:hover
-		text-decoration: none
+	& > a
+		display: inline-block
+		width: 20px
+		height: 20px
+		cursor: pointer
+		z-index: 99
+		background: $corBg
+		padding: 8px
+		+border-radius(5px)
+		@include transition-duration(.5s)
+		+fontIcon
+		color: $corTexto
+		margin-left: 10px
+		+transition
 
-	&:before
-		font-size: 26px
-		content: "\e607"
-
-	&.active
+		&:hover
+			text-decoration: none
+			&:before
+				opacity: 1
 		&:before
-			content: "\e608"
+			font-size: 20px
+			opacity: 0.5
+			+transition
+
+		&.active
+			&:before
+				opacity: 1
+			
+	
+	#btFullscreen
+		&:before
+			content: "\e607"
+
+		&.active
+			&:before
+				content: "\e608"
+
+	#btSound
+		&:before
+			content: "\e653"
+
+		&.active
+			&:before
+				content: "\e65a"
+
+	#btBug
+		&:before
+			content: "\e60e"
+
+		&.active
+			&:before
+				color: $corPrincipal
+
+	#btFeedback
+		&:before
+			content: "\e624"
+
+		&.active
+			&:before
+				color: $corPrincipal
+
+	#btHelp
+		&:before
+			content: "\e612"
+
+		&.active
+			&:before
+				color: $corPrincipal
 		
 #krControls
 	display: block
 	width: 160px
-	height: 390px
+	height: 260px
 	position: fixed
 	bottom: 10px
 	right: 20px
-	background: url(img/temp/krControls.png) center center no-repeat
+	background: url(img/temp/krControls2.png) bottom center no-repeat
 
 #marcarWrapper
 	position: fixed
@@ -452,8 +501,208 @@
 	width: 320px
 	left: 50%
 	margin-left: -160px
-	background: red
-	height: 70px
+	height: 100px
+	+transition
+	nav
+		a
+			display: block
+			float: left
+			width: 100px
+			height: 100px
+			cursor: pointer
+
+		a#bt-marcar
+			width: 120px
+			background: url(img/temp/bt-marcar-off.png)
+			&.active
+				background: url(img/temp/bt-marcar-on.png)
+			
+		a#bt-snap
+			background: url(img/temp/bt-snap-off.png)
+			&.active
+				background: url(img/temp/bt-snap-on.png)
+
+		a#bt-tags
+			background: url(img/temp/bt-tags-off.png)
+			&.active
+				background: url(img/temp/bt-tags-on.png)
+
+	#snapContent
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		z-index: -1
+		display: none
+		pointer-events: none
+		+transition-duration(0.1s)
+
+		a
+			&.bt-snap-ok
+				+buttonFlat
+				margin-top: 150px
+				width: 200px
+				margin-left: -100px
+				position: absolute
+				top: 50%
+				left: 50%
+				pointer-events: all
+				z-index: 2
+				background: $branco
+				opacity: 1
+
+			&.bt-close
+				+fontIcon
+				margin-left: 255px
+				margin-top: -235px
+				background: red
+				width: 40px
+				height: 40px
+				padding: 10px
+				background: $corBg
+				display: block
+				position: absolute
+				top: 50%
+				left: 50%
+				pointer-events: all
+				z-index: 2
+				color: $corTexto
+				+border-radius(50%)
+				font-size: 40px
+				&:hover
+					color: $corPrincipal
+
+		.bg
+			position: fixed
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			background: url(img/snap-bg.png) center center no-repeat
+			pointer-events: none
+			z-index: -1
+
+		&.show
+			display: block
+			+animate($name: scaleIn, $duration: 0.3s)
+
+	#marcarContent
+		position: fixed
+		top: 50%
+		left: 50%
+		max-width: 700px
+		min-width: 480px
+		height: auto
+		z-index: 2000
+		padding: 20px 20px 30px 20px
+		+border-radius(10px)
+		background: rgba($black, 0.7)
+		border: 5px solid rgba($branco, 0.1)
+		text-align: center
+		display: none
+		+translate(-50%, -50%)
+
+		.step
+			display: none
+			+clearfix
+			overflow: visible
+
+			header
+				text-align: center
+				position: relative
+				padding: 0 50px
+
+				& > a
+					+fontIcon
+					color: $corTexto
+					display: block
+					font-size: 35px
+					position: absolute
+					top: 0
+
+					&.bt-close
+						right: 0
+
+					&.bt-voltar
+						left: 0
+
+				h1
+					color: $corTexto
+					font-size: 30px
+					text-transform: uppercase
+					margin-bottom: 0
+
+			&.active
+				display: block
+
+			&.marcar-tipo
+				text-align: center
+				> a
+					+buttonFlat
+					float: none
+
+			&.marcar-eu-time
+				text-align: center
+				> a
+					+buttonFlat
+					float: none
+					img
+						display: block
+						width: 50px
+						height: 50px
+						margin: 0 auto
+
+			&.marcar-eu-time, &.marcar-amigo
+				form
+					display: block
+					border-top: 2px solid rgba($branco, 0.2)
+					padding: 0 70px
+					padding-top: 15px
+					h1
+						font-size: 20px
+						color: $corTexto
+					input
+						width: 240px
+						+border-radius(5px 0 0 5px)
+						display: block
+						float: left
+						border: 0
+						
+					button
+						+border-radius(0px 5px 5px 0)
+						width: 100px
+						display: block
+						float: left
+						margin: 0
+
+				.twitter-typeahead
+					display: block
+					float: left
+					width: 240px
+					.tt-dropdown-menu
+						padding: 0px
+						width: 338px
+						.tt-suggestion
+							padding: 5px 10px
+							margin-top: -1px
+							border-top: 1px solid $brancoCinza
+							+border-radius(5px)
+							&:hover, &.tt-is-under-cursor
+								background: $brancoCinza
+								color: $preto
+
+			&.marcar-amigo
+				form
+					border-top: none
+					margin-top: 10px
+		
+		&.show
+			display: block
+			+animate($name: fadeIn, $duration: 0.3s)	
+
+
+
 
 // ------------------------------------------------------------------
 // Modais
@@ -493,17 +742,15 @@
 					font-size: 26px
 					text-align: center
 
-				a.voltar
-					font-size: 25px
-					line-height: 25px
-					+border-radius(50%)
-					border: 3px solid $branco
+				a.bt-voltar
+					font-size: 30px
+					line-height: 30px
 					color: $branco
 					position: absolute
 					top: 0
 					left: 0
 					display: block
-					width: 25px
+					width: 30px
 					+fontIcon
 			
 			button
@@ -1071,12 +1318,8 @@
 
 
 // ------------------------------------------------------------------
-// 
+// Auto complete
 // ------------------------------------------------------------------
-
-
-
-
 
 
 
