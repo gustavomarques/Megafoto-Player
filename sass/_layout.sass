@@ -439,12 +439,7 @@
 		&:before
 			font-size: 20px
 			opacity: 0.5
-			+transition
-
-		&.active
-			&:before
-				opacity: 1
-			
+			+transition			
 	
 	#btFullscreen
 		&:before
@@ -462,29 +457,13 @@
 			&:before
 				content: "\e65a"
 
-	#btBug
-		&:before
-			content: "\e60e"
-
-		&.active
-			&:before
-				color: $corPrincipal
-
 	#btFeedback
 		&:before
 			content: "\e624"
 
-		&.active
-			&:before
-				color: $corPrincipal
-
 	#btHelp
 		&:before
 			content: "\e612"
-
-		&.active
-			&:before
-				color: $corPrincipal
 		
 #krControls
 	display: block
