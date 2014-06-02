@@ -13,6 +13,8 @@
 		el.innerHTML = '<span style="font-family: \'mf-player\'">' + entity + '</span>' + html;
 	}
 	var icons = {
+		'mficon-flag-en': '&#xe65b;',
+		'mficon-flag-br': '&#xe65c;',
 		'mficon-mf-sound-on': '&#xe653;',
 		'mficon-mf-sound-off': '&#xe65a;',
 		'mficon-mf-next': '&#xe646;',

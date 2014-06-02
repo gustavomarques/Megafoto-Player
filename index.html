@@ -35,7 +35,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- /modal amigos -->
-	<div class="md-modal md-effect" id="modal-amigos">
+	<div class="md-modal md-effect md-scroll" id="modal-amigos">
 		<div class="md-content">
 			<header>
 				<h1>Você tem 15 amigos nesta foto</h1>
@@ -257,7 +257,7 @@
 
 
 <!-- /modal mais Megas -->
-	<div class="md-modal md-effect" id="modal-maisMegas">
+	<div class="md-modal md-effect md-scroll" id="modal-maisMegas">
 		<div class="md-content">
 			<header>
 				<h1>Veja mais megafotos</h1>
@@ -390,6 +390,7 @@
 					<input type="text" name="" value="" placeholder="Seu Nome">
 					<input type="text" name="" value="" placeholder="Seu e-mail">
 					<select name="">
+						<option value="">Informe o assunto</option>
 						<option value="">Contato</option>
 						<option value="">feedback</option>
 						<option value="">reportar bug</option>
@@ -436,7 +437,7 @@
 
 		<a href="http://megafoto.org" target="blank" title="" id="logo"></a>
 
-		<a href="#" id="btUser"><span></span><b>Menu</b></a>
+		<a href="#" id="btUser" class="open"><span></span><b>Menu</b></a>
 
 		<section id="userNav">
 			<div id="user">
@@ -461,6 +462,7 @@
 				<a href="" title="" class="mficon-support">Ajuda para se marcar</a>
 				-->
 				<a href="#" title="" class="mficon-logout md-trigger md-setperspective" data-modal="modal-logout">Sair da conta</a>
+				<a href="#" title="" class="mficon-flag-en">Versão em inglês</a>
 			</nav>
 		</section>
 
@@ -615,7 +617,6 @@
 			<a onclick="$(document).toggleFullScreen()" id="btFullscreen"></a>
 		</section>
 
-
 		<section id="krControls"></section>
 
 		<section id="marcarWrapper">
@@ -638,17 +639,17 @@
 						<a href="#" title="" class="bt-close">&#xe647</a>
 					</header>
 					<a href="#" data-tab="2" title="" class="">Eu mesmo</a>
-					<a href="#" data-tab="3" title="" class="">Um amigo</a>
+					<a href="#" data-tab="4" title="" class="">Um amigo</a>
 				</div>
 
-				<div data-content="2" class="step marcar-eu-time">
+				<div data-content="2" class="step marcar-time">
 					<header>
 						<a href="#" data-tab="1" title="" class="bt-voltar">&#xe64c</a>
 						<h1>Escolha seu time</h1>
 						<a href="#" title="" class="bt-close">&#xe647</a>
 					</header>
-					<a href="#" title="" class=""><img src="img/temp/timea.png" alt=""></a>
-					<a href="#" title="" class=""><img src="img/temp/timeb.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="3"><img src="img/temp/timea.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="3"><img src="img/temp/timeb.png" alt=""></a>
 					<form>
 						<h1>Torço para outro time</h1>
 						<input class="times" type="text" placeholder="Escreva aqui seu time">
@@ -656,27 +657,46 @@
 					</form>
 				</div>
 
-				<div data-content="3" class="step marcar-amigo">
+				<div data-content="3" class="step share-facebook">
+					<header>
+						<a href="#" data-tab="5" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escreva sua mensagem e publique no seu mural</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					
+					<form action="#" method="get" accept-charset="utf-8">
+						<textarea name="" placeholder="Insira uma mensagem"></textarea>
+						<div class="preview">
+							<img src="img/temp/compartilhamento.png" alt="">
+							<h1>Descrição do link que vai aparecer no faceboom</h1>
+							<p>/Nome do usuário/ compartilhou a megafoto /nome da megafoto/ que aconteceu no dia /dia_mes_ano/. Clique aqui e confira</p>
+						</div>
+						<button type="">Compartilhar no facebook</button>
+					</form>
+				</div>
+
+				<div data-content="4" class="step marcar-amigo">
 					<header>
 						<a href="#" data-tab="1" title="" class="bt-voltar">&#xe64c</a>
-						<h1>Digite o nome do seu amigo</h1>
+						<h1>Digite o nome e e-mail do seu amigo</h1>
 						<a href="#" title="" class="bt-close">&#xe647</a>
 					</header>
 
 					<form>
 						<input class="amigos" type="text" placeholder="Nome do seu amigo">
-						<button type="" data-tab="4">Enviar</button>
+						<input type="text" placeholder="e-mail do seu amigo">
+						<button type="" data-tab="5">Continuar</button>
 					</form>
 				</div>
 
-				<div data-content="4" class="step marcar-eu-time">
+				<div data-content="5" class="step marcar-time">
 					<header>
-						<a href="#" data-tab="3" title="" class="bt-voltar">&#xe64c</a>
+						<a href="#" data-tab="4" title="" class="bt-voltar">&#xe64c</a>
 						<h1>Escolha o time do seu amigo</h1>
 						<a href="#" title="" class="bt-close">&#xe647</a>
 					</header>
-					<a href="#" title="" class=""><img src="img/temp/timea.png" alt=""></a>
-					<a href="#" title="" class=""><img src="img/temp/timeb.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="6"><img src="img/temp/timea.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="6"><img src="img/temp/timeb.png" alt=""></a>
 					<form>
 						<h1>Outro time</h1>
 						<input class="times" type="text" placeholder="Escreva aqui seu time">
@@ -684,11 +704,52 @@
 					</form>
 				</div>
 
-
+				<div data-content="6" class="step share-facebook">
+					<header>
+						<a href="#" data-tab="5" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escreva sua mensagem e publique no seu mural</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					
+					<form action="#" method="get" accept-charset="utf-8">
+						<textarea name="" placeholder="Insira uma mensagem"></textarea>
+						<div class="preview">
+							<img src="img/temp/compartilhamento.png" alt="">
+							<h1>Descrição do link que vai aparecer no faceboom</h1>
+							<p>/Nome do usuário/ compartilhou a megafoto /nome da megafoto/ que aconteceu no dia /dia_mes_ano/. Clique aqui e confira</p>
+						</div>
+						<button type="">Compartilhar no facebook</button>
+					</form>
+				</div>
 
 			</div>
-
 		</section>
+
+		<a href="#" class="cluster positionTest">102</a>
+
+		<div class="tagBox positionTest">
+			<a href="#" title="" class="tagBt"></a>
+			<div class="profile">
+				<header>
+					<img src="img/controlBar-user.jpg" alt="">
+
+					<div>
+						<h1>Gustavo Marques Fernandes</h1>
+						<a href="#" title="" class="profile-fb">Ver perfil no facebook</a>
+					</div>
+				</header>
+				
+				<p class="quote">"Muito Legal esse jogo, inesquecível... Ver meu time vencer de goleada, na precença da mulher que eu amo e minha filha, é simplesmente incrível!"</p>
+				
+				<nav class="user">
+					<a href="#" title="">Remover Tag</a>
+					<a href="#" title="">Editar texto</a>
+					<a href="#" title="">Editar time</a>
+				</nav>
+
+				<a href="#" title="" class="bt-close">&#xe647</a>
+			</div>
+		</div>
 
 		<div id="pano">
 			<script src="vtour/tour.js"></script>
@@ -703,11 +764,17 @@
 	</div>
 <!-- /container end -->
 
+	<div id="help-overlay">
+		<span class="help-amigos"></span>
+		<span class="help-menu"></span>
+		<span class="help-marcar"></span>
+		<span class="help-kr"></span>
+		<span class="help-top-buttons"></span>
+		<span class="help-placar"></span>
+		<span class="help-"></span>
+	</div>
 
 	<div class="md-overlay"></div><!-- the overlay element -->
-
-
-
 
 
 

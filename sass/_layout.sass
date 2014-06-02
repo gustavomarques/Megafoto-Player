@@ -113,7 +113,7 @@
 	position: fixed
 	top: 0
 	bottom: 0
-	left: -240px
+	left: 0
 	width: 240px
 	background: $corBg
 	display: block
@@ -167,19 +167,16 @@
 
 		span
 			+fontIcon
-			font-size: 50px
+			font-size: 45px
 			display: block
 			margin-bottom: 10px
 
 		p
-			font-size: 13px
-			color: $cinza
-
-			b
-				display: block
-				color: $brancoCinza
-				font-size: 16px
-				text-transform: uppercase
+			font-size: 18px
+			padding: 0 40px
+			line-height: 120%
+			text-transform: uppercase
+			+fontBold
 
 		&:hover
 			background: $corBg
@@ -247,6 +244,7 @@
 	width: 320px
 	height: 90px
 	overflow: visible
+	z-index: 3
 
 	#slides
 		background: url(img/placar-bg.png) top center no-repeat
@@ -480,31 +478,37 @@
 	width: 320px
 	left: 50%
 	margin-left: -160px
-	height: 100px
+	height: 120px
 	+transition
+	background: url(img/marcar-bg.png)
+	z-index: 99
+
 	nav
+		padding: 0 10px
 		a
 			display: block
 			float: left
-			width: 100px
-			height: 100px
+			width: 70px
+			height: 60px
 			cursor: pointer
+			opacity: 0
+			background-position: center center
+			background-repeat: no-repeat
+			margin: 40px 10px 20px 10px
+			&.active
+				opacity: 1
 
 		a#bt-marcar
-			width: 120px
-			background: url(img/temp/bt-marcar-off.png)
-			&.active
-				background: url(img/temp/bt-marcar-on.png)
+			width: 100px
+			height: 100px
+			margin-top: 0
+			background-image: url(img/bt-marcar-on.png)
 			
 		a#bt-snap
-			background: url(img/temp/bt-snap-off.png)
-			&.active
-				background: url(img/temp/bt-snap-on.png)
+			background-image: url(img/bt-snap-on.png)
 
 		a#bt-tags
-			background: url(img/temp/bt-tags-off.png)
-			&.active
-				background: url(img/temp/bt-tags-on.png)
+			background-image: url(img/bt-tags-on.png)
 
 	#snapContent
 		position: fixed
@@ -621,7 +625,7 @@
 					+buttonFlat
 					float: none
 
-			&.marcar-eu-time
+			&.marcar-time
 				text-align: center
 				> a
 					+buttonFlat
@@ -632,7 +636,6 @@
 						height: 50px
 						margin: 0 auto
 
-			&.marcar-eu-time, &.marcar-amigo
 				form
 					display: block
 					border-top: 2px solid rgba($branco, 0.2)
@@ -675,7 +678,53 @@
 				form
 					border-top: none
 					margin-top: 10px
-		
+					
+					input, button
+						width: 340px
+						margin: 20px 0 0 0
+						display: inline-block
+
+					button
+						+buttonFlat
+			
+			&.share-facebook
+				textarea
+					height: 40px
+					margin-top: 20px
+
+				header > h1
+					font-size: 28px
+
+				button
+					float: right
+
+				.preview
+					display: block
+					margin-top: 20px
+					+clearfix
+					text-align: left
+					border: 2px solid rgba($corPrincipal, 0.2)
+
+					h1
+						+fontLight
+						border-bottom: 2px solid rgba($branco, 0.1)
+						font-size: 17px
+						padding: 15px 0
+						background: $corBg
+						margin-bottom: 0
+						color: $corTexto
+
+					img
+						display: block
+						width: 120px
+						height: 120px
+						float: left
+						margin-right: 30px
+
+					p
+						display: block
+						padding-right: 30px
+						color: $cinzaClaro
 		&.show
 			display: block
 			+animate($name: fadeIn, $duration: 0.3s)	
@@ -861,6 +910,7 @@
 						padding: 15px 0
 						background: $corBg
 						margin-bottom: 0
+						color: $corTexto
 
 					img
 						display: block
@@ -1038,6 +1088,7 @@
 						font-size: 14px
 						margin-bottom: 0
 						margin-top: 5px
+	
 	&#modal-maisMegas
 		.content
 			padding: 0
@@ -1094,6 +1145,21 @@
 			& > a
 				+buttonFlat
 				width: auto
+
+	&#modal-feedback
+		.content
+			form
+				input
+					width: 48%
+					float: left
+					&:nth-of-type(2n+2)
+						margin-left: 4%
+						margin-bottom: 20px
+				select
+					margin-bottom: 20px
+					height: 40px
+				button
+					float: right
 
 
 // ------------------------------------------------------------------
@@ -1283,13 +1349,74 @@
 
 
 // ------------------------------------------------------------------
-// 
+// HELP
 // ------------------------------------------------------------------
 
 
+#help-overlay
+	background: rgba(0,0,0, 0.7)
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 9998
+	display: none
+	pointer-events: none
+	
+	span
+		position: fixed
+		display: block
+		background-repeat: no-repeat
+		background-position: top center
 
+		&.help-amigos
+			top: 0
+			left: 0
+			width: 420px
+			height: 460px
+			background-image: url(img/help/avatar-amigos.png)
 
+		&.help-menu
+			bottom: 30px
+			left: 0
+			width: 240px
+			height: 80px
+			background-image: url(img/help/menu.png)
 
+		&.help-marcar
+			bottom: 0
+			left: 50%
+			margin-left: -370px
+			width: 740px
+			height: 340px
+			background-image: url(img/help/marcar.png)
+
+		&.help-kr
+			bottom: 0
+			right: 0
+			width: 300px
+			height: 400px
+			background-image: url(img/help/kr-controls.png)
+
+		&.help-top-buttons
+			top: 0
+			right: 0
+			width: 210px
+			height: 250px
+			background-image: url(img/help/top-buttons.png)
+
+		&.help-placar
+			top: 70px
+			left: 50%
+			margin-left: -120px
+			width: 240px
+			height: 140px
+			background-image: url(img/help/placar.png)
+
+	&.active
+		display: block
+		+animate(fadeIn)
 
 
 
@@ -1297,10 +1424,183 @@
 
 
 // ------------------------------------------------------------------
-// Auto complete
+// Cluster and Tag info
 // ------------------------------------------------------------------
 
+.cluster
+	background: $corPrincipal
+	cursor: pointer
+	+box-sizing(border-box)
+	+border-radius(50%)
+	+box-shadow(rgba($corBg, 0.8) 0 0px 0 8px, rgba($corBg, 0.2) 0 -5px 0 0 inset)
+	+transition
+	width: 40px
+	height: 40px
+	+fontBold
+	line-height: 40px
+	text-align: center
+	font-size: 16px
+	opacity: 0.8
+	color: $preto
 
+	&:hover
+		+scale(1.2)
+		color: $preto
+		opacity: 1
+
+	&.positionTest
+		position: fixed
+		top: 45%
+		left: 45%
+		z-index: 2
+
+
+.tagBox
+	position: relative
+	display: block
+
+	.tagBt
+		background: url(img/tag.png) top center no-repeat
+		width: 50px
+		height: 50px
+		display: block
+		opacity: 0.8
+
+		&:hover
+			+scale(1.2)
+			opacity: 1
+
+	.profile
+		background: $corBg
+		display: block
+		padding: 10px
+		+border-radius(10px)
+		width: 300px
+		+box-shadow(rgba(0,0,0, 0.4) 0 0px 0 10px)
+		+transition
+		+clearfix
+		position: absolute
+		overflow: visible
+		bottom: 90px
+		left: -145px
+		+scale(2)
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+		
+		&:after
+			position: absolute
+			bottom: -30px
+			left: 50%
+			margin-left: -10px
+			content: ''
+			width: 0
+			height: 0
+			border-left: 20px solid transparent
+			border-right: 20px solid transparent
+			border-top: 20px solid rgba(0,0,0, 0.4)
+
+		&.active
+			+scale(1)
+			opacity: 1
+			visibility: visible
+			pointer-events: all
+
+		*
+			color: $corTexto
+
+		header
+			display: block
+			+clearfix
+
+			img
+				width: 100px
+				height: 100px
+				margin-right: 10px
+				display: block
+				float: left
+				+border-radius(5px)
+
+			& > div
+				display: block
+				float: left
+				height: 100px
+				width: 190px
+				position: relative
+
+				h1
+					font-size: 20px
+					margin-bottom: 10px
+
+				.profile-fb
+					+button3d
+					+clearfix
+					display: block
+					float: none
+					background: #3b579d
+					font-size: 16px
+					line-height: 16px
+					padding: 6px 10px 10px 10px
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 0
+
+		.quote
+			font-size: 14px
+			font-style: italic
+			font-family: georgia
+			max-width: 350px
+			margin-top: 10px
+			margin-bottom: 0
+
+		nav.user
+			display: block
+			width: 100%
+			margin-top: 10px
+			+clearfix
+
+			a
+				display: block
+				float: left
+				width: 32%
+				height: 30px
+				background: $black
+				margin-left: 2%
+				text-align: center
+				line-height: 30px
+				+border-radius(5px)
+				opacity: 0.6
+
+				&:first-child
+					margin-left: 0
+
+				&:hover
+					opacity: 1
+
+		.bt-close
+			+fontIcon
+			width: 30px
+			height: 30px
+			padding: 5px
+			background: $corBg
+			display: block
+			position: absolute
+			top: -20px
+			right: -20px
+			pointer-events: all
+			z-index: 2
+			color: $corTexto
+			+border-radius(50%)
+			font-size: 30px
+			&:hover
+				color: $corPrincipal
+
+
+	&.positionTest
+		position: fixed
+		top: 65%
+		right: 25%
 
 
 

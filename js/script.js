@@ -32,7 +32,7 @@ $(document).ready(function() {
 // ------------------------------------------------------------------
 // megafoto modal
 // ------------------------------------------------------------------ 
-
+/* 
 	$( '#userNav nav > a, a#amigos' ).click( function(){
 
 		var alturaModal = $('.md-show .md-content .content').height();
@@ -42,7 +42,7 @@ $(document).ready(function() {
 			$('.md-modal').addClass('md-scroll');
 		}
 	});
-
+*/
 	$(function () {
 		$('[data-tab]').on('click', function (e) {
 			$(this)
@@ -72,9 +72,8 @@ $(document).ready(function() {
 */
 
 // apagar depois, apenas pra exemplo //
-	$( 'button' ).click( function(){
+	$( '.md-modal button' ).click( function(){
 		$('.alert.sucess').addClass('active');
-		
 		setTimeout(function() {
 			$('.alert.sucess').removeClass('active');
     }, 3100)
@@ -177,6 +176,37 @@ $( '#snapContent .bt-close' ).click( function(){
 
 
 
+// ------------------------------------------------------------------
+// HELP
+// ------------------------------------------------------------------ 
+
+$( '#btHelp' ).click( function(){
+	$( '#help-overlay' ).toggleClass( "active" );
+	if( $('#btUser').hasClass('open') ){
+
+	}else{
+		$('#userNav').stop().animate({left : '0'}, 200);
+		$('#btUser').addClass('open');
+	}
+});
+
+
+$('#help-overlay.active').click( function(){
+	$(this).hide();
+});
+
+
+// ------------------------------------------------------------------
+// TagBox
+// ------------------------------------------------------------------ 
+
+$( '.tagBt' ).click( function(){
+	$(this).closest('.tagBox').find('.profile').toggleClass( "active" );
+});
+
+$( '.tagBox .bt-close' ).click( function(){
+	$('.tagBox .profile').removeClass('active');
+});
 
 
 
