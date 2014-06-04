@@ -2649,3 +2649,67 @@
 .scaleOut
   -webkit-animation-name: scaleOut
   animation-name: scaleOut
+
+
+
+@-webkit-keyframes scaleBigIn
+  0%
+    opacity: 0
+    -webkit-transform: scale(0.3)
+    transform: scale(0.3)
+  100%
+    opacity: 1
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+
+@keyframes scaleBigIn
+  0%
+    opacity: 0
+    -webkit-transform: scale(2)
+    -ms-transform: scale(2)
+    transform: scale(2)
+  100%
+    opacity: 1
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+
+
+.scaleBigIn
+  -webkit-animation-name: scaleIn
+  animation-name: scaleIn
+
+
+
+@-webkit-keyframes scaleBigOut
+  0%
+    opacity: 1
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+  100%
+    opacity: 0
+    -webkit-transform: scale(2)
+    -ms-transform: scale(2)
+    transform: scale(2)
+
+
+@keyframes scaleBigOut
+  0%
+    opacity: 1
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+  100%
+    opacity: 0
+    -webkit-transform: scale(2)
+    -ms-transform: scale(2)
+    transform: scale(2)
+
+
+.scaleBigOut
+  -webkit-animation-name: scaleOut
+  animation-name: scaleOut
+
+

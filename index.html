@@ -15,6 +15,7 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
+	<link rel="stylesheet" href="splash.css">
 	<link rel="stylesheet" href="style.css">
 	
 	<!--[if IE]>
@@ -22,15 +23,33 @@
 	<![endif]-->
 </head>
 <body>
-<div id="fb-root"></div>
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=411086725670032";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<div id="splash">
+	<span class="dot"></span>
+</div>
+
+<div id="welcome">
+	<header>
+		<img class="logo" src="img/splash/megafoto.png" alt="">
+	</header>
+	<section>
+		<h2>O jogo não acabou! Faça seu login e divirta-se marcando você e seus amigos. Viva esta emoção!</h2>
+		<nav>
+			<a href="#" title="">Navegar sem fazer login</a>
+			<a href="#" title="" class="fb">Fazer login no facebook</a>
+		</nav>
+		<p>* Ao fazer login você concorda automaticamente com os <a href="termos.html" title="">Termos e condições</a>.</p>
+	</section>
+	<nav class="apoio">
+		<h1>oferecimento:</h1>
+		<a href="#" title=""><img src="img/temp/patrocinadorA.png" alt=""></a>
+		<a href="#" title=""><img src="img/temp/patrocinadorB.png" alt=""></a>
+		<a href="#" title=""><img src="img/temp/patrocinadorC.png" alt=""></a>
+		<a href="#" title=""><img src="img/temp/patrocinadorD.png" alt=""></a>
+		<a href="#" title=""><img src="img/temp/patrocinadorE.png" alt=""></a>
+	</nav>
+	<a href="#" title="" class="language"><img src="img/flag-en.png" alt="">access the English version</a>
+</div>
 
 <!-- /modal amigos -->
 	<div class="md-modal md-effect md-scroll" id="modal-amigos">
@@ -86,7 +105,7 @@
 			</header>
 			<div class="content">
 				<h1>Clicando em curtir você nos ajuda a realizar mais megafotos!</h1>
-				<div class="fb-like content" data-href="https://www.facebook.com/megafotos" data-colorscheme="dark" data-width="1400" data-show-faces="true" data-send="true"></div>
+				<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmegafotos&amp;width=700&amp;height=300&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=222651567807370" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:300px;" allowTransparency="true"></iframe>
 			</div>
 		</div>
 	</div>
@@ -460,7 +479,6 @@
 				<a href="" title="" class="mficon-support">Ajuda para se marcar</a>
 				-->
 				<a href="#" title="" class="mficon-logout md-trigger md-setperspective" data-modal="modal-logout">Sair da conta</a>
-				<a href="#" title="" class="mficon-flag-en">Versão em inglês</a>
 			</nav>
 		</section>
 
@@ -749,18 +767,18 @@
 			</div>
 		</div>
 
-		<div id="pano">
-			<script src="vtour/tour.js"></script>
-
-			<div id="pano" style="width:100%;height:100%;">
-				<noscript><table style="width:100%;height:100%;"><tr style="valign:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
-				<script>
-					embedpano({swf:"vtour/tour.swf", xml:"vtour/tour.xml", target:"pano", html5:"prefer", passQueryParameters:true});
-				</script>
-			</div>
-		</div>
 	</div>
 <!-- /container end -->
+	<div id="pano">
+		<script src="vtour/tour.js"></script>
+
+		<div id="pano" style="width:100%;height:100%;">
+			<noscript><table style="width:100%;height:100%;"><tr style="valign:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+			<script>
+				embedpano({swf:"vtour/tour.swf", xml:"vtour/tour.xml", target:"pano", html5:"prefer", passQueryParameters:true});
+			</script>
+		</div>
+	</div>
 
 	<div id="help-overlay">
 		<span class="help-amigos"></span>
@@ -810,6 +828,7 @@
 	<script src="js/libs/classie.js"></script>
 	<script src="js/libs/modalEffects.js"></script>
 	<script src="js/libs/typeahead.js"></script>
+	<script src="js/libs/pace.min.js"></script>
 
 	<!-- scripts concatenated and minified via build script -->
 	<script src="js/plugins.js"></script>

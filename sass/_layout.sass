@@ -1,7 +1,14 @@
 // ------------------------------------------------------------------
 // General
 // ------------------------------------------------------------------
+body .container
+	opacity: 0
 
+	&.show
+		opacity: 1
+		& > *
+			+animate($name:fadeIn, $delay: 0.7s)
+	
 
 #pano
 	position: fixed
@@ -1551,7 +1558,6 @@
 			font-size: 14px
 			font-style: italic
 			font-family: georgia
-			font-weight: bold
 			max-width: 350px
 			margin-top: 10px
 			margin-bottom: 0
@@ -1604,6 +1610,181 @@
 		top: 65%
 		right: 25%
 
+
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// Splash
+// ------------------------------------------------------------------
+
+
+.pace
+	-webkit-pointer-events: none
+	pointer-events: none
+	-webkit-user-select: none
+	-moz-user-select: none
+	user-select: none
+	z-index: 9998
+	position: fixed
+	//&.pace-inactive .pace-progress
+		//display: none
+	.pace-progress
+		position: fixed
+		z-index: 2000
+		top: 0
+		right: 0
+		left: 0
+		height: 100px
+		text-align: center
+		background: rgba(0,0,0,0.2)
+		width: 100%
+		&:after
+			display: block
+			position: fixed
+			top: 0
+			right: 0
+			left: 0
+			text-align: center
+			content: attr(data-progress-text)
+			font-family: "Helvetica Neue", sans-serif
+			font-weight: 100
+			font-size: 100px
+			line-height: 100%
+			color: $corTexto
+
+.pace-inactive
+	+animate(bounceOutUp)
+
+
+#splash
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	//background: url(img/splash/bg.jpg) right bottom no-repeat
+	z-index: 9997
+	+bgCover
+	+transition
+
+	.dot
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		//background: rgba(0,0,0,0.5) url(img/splash/dot.png) top left
+		z-index: 1
+
+	&.hide
+		+animate($name: slideOutUp, $duration: 1s, $delay: 0.3s)
+
+#welcome
+	display: block
+	position: fixed
+	top: 50%
+	left: 50%
+	min-width: 480px
+	min-height: 307px
+	height: auto
+	width: 650px
+	margin-left: -350px
+	margin-top: -165px
+	z-index: 2000
+	+border-radius(10px)
+	background: rgba($black, 0.5)
+	text-align: center
+	//+translateY(-50%)
+	z-index: 9999
+	+transition
+	+animate($name: scaleIn, $delay: 1.5s)
+
+	*:not(a)
+		color: $corTexto
+
+	p:last-child
+		margin: 0
+
+	header
+		.logo
+			position: absolute
+			width: 300px
+			height: 40px
+			display: block
+			top: -60px
+			left: 50%
+			margin-left: -150px
+
+		h1
+			text-transform: uppercase
+			padding: 20px 0
+			margin: 0
+
+	section
+		padding: 20px
+
+		h2
+			margin: 0
+			+fontLight
+			font-size: 32px
+
+		nav
+			text-align: center
+			a
+				+buttonFlat
+				+fontRegular
+				&.fb
+					background: #3b579d
+					color: $corTexto
+
+					&:hover
+						+box-shadow(rgba($branco, 0.8) 0 0px 0 15px, rgba($corBg, 0.2) 0 -5px 0 0 inset)
+	nav.apoio
+		position: absolute
+		bottom: -150px
+		text-align: center
+		left: -20px
+		right: -20px
+		height: 112px
+		display: block
+		h1
+			font-size: 16px
+			display: block
+			margin-bottom: 0
+		a
+			display: inline-block
+			width: 200px
+			height: 100px				
+			margin: -10px -35px
+			+scale(0.6)
+
+			&:hover
+				+scale(1)
+
+	a.language
+		text-transform: uppercase
+		display: block
+		padding: 10px 0
+		color: $corTexto
+		line-height: 20px
+		background: $corBg
+		+border-radius(0 0 10px 10px)
+		img
+			margin-right: 10px
+			display: inline-block
+			height: 20px
+
+		&:hover
+			background: $corTexto
+			color: $corTextoInverso
+
+
+	&.hide
+		+animate($name: scaleBigOut)
 
 
 
