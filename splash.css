@@ -1,4 +1,4 @@
 /* line 2, sass/splash.sass */
-#splash { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: url(img/splash/bg.jpg) right bottom no-repeat; z-index: 9997; }
-/* line 11, sass/splash.sass */
-#splash .dot { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.5) url(img/splash/dot.png) top left; z-index: 1; }
+#splash { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: url(img/splash/bg-estadio.jpg) right bottom no-repeat; z-index: 9997; }
+/* line 12, sass/splash.sass */
+#splash .dot { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.2) url(img/splash/dot.png) top left; z-index: 1; }

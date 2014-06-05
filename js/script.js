@@ -35,6 +35,7 @@ $(document).ready(function() {
 		$( this ).toggleClass( "active" );
 	});
 
+	$('.tooltip').tooltipster();
 
 });
 
@@ -201,11 +202,10 @@ $( '#btHelp' ).click( function(){
 	}
 });
 
-
-$('#help-overlay.active').click( function(){
-	$(this).hide();
+$( document ).on( "click", "#help-overlay.active", function() {
+	$("#help-overlay.active").removeClass('active');
+	$( "#btHelp" ).removeClass('active');
 });
-
 
 // ------------------------------------------------------------------
 // TagBox

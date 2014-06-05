@@ -980,9 +980,12 @@ body .container
 					& > a
 						+buttonFlat
 						width: 190px
+						padding: 15px
 						span
 							+fontBold
 							font-size: 40px
+							padding: 0
+							margin-top: 10px
 
 				& > span
 					+fontBold
@@ -1369,7 +1372,6 @@ body .container
 	bottom: 0
 	z-index: 9998
 	display: none
-	pointer-events: none
 	
 	span
 		position: fixed
@@ -1671,6 +1673,11 @@ body .container
 	+bgCover
 	+transition
 
+	& > img
+		height: 100%
+		position: absolute
+		z-index: 3
+
 	.dot
 		position: fixed
 		top: 0
@@ -1680,8 +1687,11 @@ body .container
 		//background: rgba(0,0,0,0.5) url(img/splash/dot.png) top left
 		z-index: 1
 
-	&.hide
-		+animate($name: slideOutUp, $duration: 1s, $delay: 0.3s)
+//	&.hide
+//		+animate($name: slideOutUp, $duration: 1s, $delay: 0.3s)
+
+.pace-done #splash
+	+animate($name: slideOutDown, $duration: 1s, $delay: 0.5s)
 
 #welcome
 	display: block
@@ -1696,12 +1706,12 @@ body .container
 	margin-top: -165px
 	z-index: 2000
 	+border-radius(10px)
-	background: rgba($black, 0.5)
+	background: rgba($black, 0.6)
 	text-align: center
 	//+translateY(-50%)
 	z-index: 9999
 	+transition
-	+animate($name: scaleIn, $delay: 1.5s)
+	+animate($name: scaleIn, $delay: 2s)
 
 	*:not(a)
 		color: $corTexto
@@ -1771,7 +1781,7 @@ body .container
 		padding: 10px 0
 		color: $corTexto
 		line-height: 20px
-		background: $corBg
+		background: rgba($black, 0.3)
 		+border-radius(0 0 10px 10px)
 		img
 			margin-right: 10px
