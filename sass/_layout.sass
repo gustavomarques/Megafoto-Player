@@ -116,6 +116,32 @@ body .container
 		transform: translateY(0) rotate(-45deg)
 
 
+#btNoLogged
+	position: fixed
+	top: 10px
+	left: 10px
+	+border-radius(5px)
+	display: block
+	width: auto
+	height: 25px
+	cursor: pointer
+	z-index: 99
+	background: $corBg
+	padding: 8px
+	display: block
+	height: 25px
+	line-height: 27px
+	font-size: 17px
+	color: $corTexto
+	text-transform: uppercase
+	padding-left: 33px
+	opacity: 1
+	visibility: visible
+	+transition
+	&:before
+		position: absolute
+		left: 10px
+
 #userNav
 	position: fixed
 	top: 0
