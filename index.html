@@ -43,11 +43,7 @@
 	</section>
 	<nav class="apoio">
 		<h1>oferecimento:</h1>
-		<a href="#" title=""><img src="img/temp/patrocinadorA.png" alt=""></a>
-		<a href="#" title=""><img src="img/temp/patrocinadorB.png" alt=""></a>
-		<a href="#" title=""><img src="img/temp/patrocinadorC.png" alt=""></a>
-		<a href="#" title=""><img src="img/temp/patrocinadorD.png" alt=""></a>
-		<a href="#" title=""><img src="img/temp/patrocinadorE.png" alt=""></a>
+		<a href="http://globoesporte.globo.com/" title="" target="blank"><img src="img/ge.png" alt=""></a>
 	</nav>
 	<a href="#" title="" class="language"><img src="img/flag-en.png" alt="">access the English version</a>
 </div>
@@ -172,7 +168,7 @@
 <!-- /modal end compartilhar -->
 
 
-<!-- /modal print -->
+<!-- /modal print 
 	<div class="md-modal md-effect" id="modal-print">
 		<div class="md-content">
 			<header>
@@ -221,9 +217,9 @@
 						<li>Clicando em continuar você será direcionado para a loja de nosso parceiro. São diversos tamanhos para sua escolha.</li>
 					</ul>
 					<a href="http://www.alphagraphics.com.br/" class="bt-pay" target="blank">A partir de R$19,90</a>
-					<!--
+
 					<a href="#" class="bt-pay" data-tab="4">Continuar</a>
-					-->
+
 				</div>
 
 				<div data-content="4" class="step print-papel">
@@ -274,7 +270,7 @@
 			</div>
 		</div>
 	</div>
-<!-- /modal end print -->
+ /modal end print -->
 
 
 <!-- /modal mais Megas -->
@@ -476,9 +472,9 @@
 			<nav>
 				<a href="#" title="" class="mficon-like md-trigger md-setperspective" data-modal="modal-curtir">Curtir a megafoto</a>
 				<a href="#" title="" class="mficon-share md-trigger md-setperspective" data-modal="modal-share">Compartilhar megafoto</a>
-				<a href="#" title="" class="mficon-print md-trigger md-setperspective" data-modal="modal-print">MegaPoster</a>
 				<a href="#" title="" class="mficon-pictures md-trigger md-setperspective" data-modal="modal-maisMegas">Ver mais megafotos</a>
 				<!--
+				<a href="#" title="" class="mficon-print md-trigger md-setperspective" data-modal="modal-print">MegaPoster</a>
 				<a href="" title="" class="mficon-feedback">FeedBack</a>
 				<a href="" title="" class="mficon-bug">Reportar Bug</a>
 				<a href="" title="" class="mficon-calendar">Próximas coberturas</a>
@@ -641,6 +637,123 @@
 
 		<section id="krControls"></section>
 
+		<section id="viewTags">
+			<a href="#" class="active"></a>
+		</section>
+
+		<section id="marcarWrapper">
+			<nav>
+				<a href="#" title="" id="bt-marcar"></a>
+			</nav>
+		
+			<div id="marcarContent" class="content">
+				<div data-content="1" class="step marcar-tipo active">
+					<header>
+						<h1>Quem você deseja marcar?</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					<a href="#" data-tab="2" title="" class="">Eu mesmo</a>
+					<a href="#" data-tab="4" title="" class="">Um amigo</a>
+				</div>
+
+				<div data-content="2" class="step marcar-time">
+					<header>
+						<a href="#" data-tab="1" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escolha seu time</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					<a href="#" title="" class="" data-tab="3"><img src="img/temp/timea.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="3"><img src="img/temp/timeb.png" alt=""></a>
+					<form>
+						<h1>Torço para outro time</h1>
+						<input class="times" type="text" placeholder="Escreva aqui seu time">
+						<button type="">Enviar</button>
+					</form>
+				</div>
+
+				<div data-content="3" class="step share-facebook">
+					<header>
+						<a href="#" data-tab="5" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escreva sua mensagem e publique no seu mural</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					
+					<form action="#" method="get" accept-charset="utf-8">
+						<textarea name="" placeholder="Insira uma mensagem"></textarea>
+						<div class="preview">
+							<img src="img/temp/compartilhamento.png" alt="">
+							<h1>Descrição do link que vai aparecer no faceboom</h1>
+							<p>/Nome do usuário/ compartilhou a megafoto /nome da megafoto/ que aconteceu no dia /dia_mes_ano/. Clique aqui e confira</p>
+						</div>
+						<button type="">Compartilhar no facebook</button>
+					</form>
+				</div>
+
+				<div data-content="4" class="step marcar-amigo">
+					<header>
+						<a href="#" data-tab="1" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Digite o nome do seu amigo</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+
+					<form>
+						<input class="amigos" type="text" placeholder="Nome do seu amigo">
+						<button type="" data-tab="5">Continuar</button>
+					</form>
+				</div>
+
+				<div data-content="5" class="step marcar-time">
+					<header>
+						<a href="#" data-tab="4" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escolha o time do seu amigo</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					<a href="#" title="" class="" data-tab="6"><img src="img/temp/timea.png" alt=""></a>
+					<a href="#" title="" class="" data-tab="6"><img src="img/temp/timeb.png" alt=""></a>
+					<form>
+						<h1>Outro time</h1>
+						<input class="times" type="text" placeholder="Escreva aqui seu time">
+						<button type="">Enviar</button>
+					</form>
+				</div>
+
+				<div data-content="6" class="step marcar-amigo">
+					<header>
+						<a href="#" data-tab="5" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Digite o e-mail do seu amigo</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+
+					<form>
+						<h1>Informe o email de seu amigo para que ele seja avisado que você o marcou</h1>
+						<input type="text" placeholder="e-mail do seu amigo">
+						<button type="" data-tab="7">Finalizar marcação</button>
+					</form>
+				</div>
+
+				<div data-content="7" class="step share-facebook">
+					<header>
+						<a href="#" data-tab="5" title="" class="bt-voltar">&#xe64c</a>
+						<h1>Escreva sua mensagem e publique no seu mural</h1>
+						<a href="#" title="" class="bt-close">&#xe647</a>
+					</header>
+					
+					<form action="#" method="get" accept-charset="utf-8">
+						<textarea name="" placeholder="Insira uma mensagem"></textarea>
+						<div class="preview">
+							<img src="img/temp/compartilhamento.png" alt="">
+							<h1>Descrição do link que vai aparecer no faceboom</h1>
+							<p>/Nome do usuário/ compartilhou a megafoto /nome da megafoto/ que aconteceu no dia /dia_mes_ano/. Clique aqui e confira</p>
+						</div>
+						<button type="">Compartilhar no facebook</button>
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+<!-- MARCAR COM SNAP
+
 		<section id="marcarWrapper">
 			<nav>
 				<a href="#" title="" id="bt-snap"></a>
@@ -759,6 +872,7 @@
 
 			</div>
 		</section>
+-->
 
 		<a href="#" class="cluster positionTest">102</a>
 

@@ -153,6 +153,9 @@ $( '#bt-tags' ).click( function(){
 	$( this ).toggleClass( "active" );
 });
 
+$( '#viewTags a' ).click( function(){
+	$( this ).toggleClass( "active" );
+});
 
 $( '#marcarWrapper nav a' ).click( function(){
 	if( $('#bt-snap').hasClass('active') ){
