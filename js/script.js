@@ -192,6 +192,11 @@ $( '#snapContent .bt-close' ).click( function(){
 
 
 
+
+$( '#marcarVip' ).click( function(){
+	$( this ).addClass( "active" );
+});
+
 // ------------------------------------------------------------------
 // HELP
 // ------------------------------------------------------------------ 
@@ -252,4 +257,4 @@ $(document).ready(function () {
 
 
 
-$("#modal-amigos, #modal-curtir, #modal-share, #modal-maisMegas, #modal-logout, #modal-feedback").hide();
+//$("#modal-amigos, #modal-curtir, #modal-share, #modal-maisMegas, #modal-logout, #modal-feedback").hide();

@@ -538,17 +538,33 @@ body .container
 		display: block
 		width: 100%
 		height: 140px
-		float: none	
+		float: none
+		
 		a
 			display: inline-block
 			width: 120px
 			height: 120px
 			margin: 10px
-			background: url(img/marcar-vip.png) center center no-repeat
+			position: relative
 
+			span
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: 99999
+				display: block
+				opacity: 0
 
-			&#bt-marcar-vip
-				background-image: url(img/marcar-vip-hover.png)
+			&.active
+				span
+					opacity: 1
+
+			&#marcarVip
+				background: url(img/marcar-vip2.png) center top no-repeat
+				span
+					background: url(img/marcar-vip2.png) center bottom no-repeat
 
 #marcarWrapper
 	position: fixed
@@ -1909,7 +1925,7 @@ body .container
 			right: 20%
 
 		.profile
-		
+
 			header
 				display: block
 				position: relative

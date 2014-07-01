@@ -20,9 +20,11 @@ var ModalEffects = (function() {
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
 				close = modal.querySelector( '.md-close' );
 
+			var marcarVip = document.querySelector( "#marcarVip" );
+
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
-				// classie.remove( modal, 'md-scroll' );
+				classie.remove( marcarVip, 'active' );
 
 				if( hasPerspective ) {
 					classie.remove( document.documentElement, 'md-perspective' );
