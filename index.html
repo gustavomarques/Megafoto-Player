@@ -421,7 +421,6 @@
 	</div>
 <!-- /modal end Feedback -->
 
-
 <!--
 	<div id="testes">
 		<a href="#" title="" class="default">alert padrao</a>
@@ -458,7 +457,7 @@
 		<a href="#" id="btNoLogged" class="mficon-facebook"><b>Conectar no facebook</b></a>
 -->
 
-		<section id="userNav">
+		<section id="userNav" class="open">
 			<div id="user">
 				<img alt="" src="img/controlBar-user.jpg">
 				<span>
@@ -641,6 +640,16 @@
 			<a href="#" class="active"></a>
 		</section>
 
+		<!-- Aparece apenas para Administradores -->
+
+		<section id="adminOnly">
+			<nav>
+				<a href="#" id="marcarVip" class="md-trigger md-setperspective tooltip" data-modal="modal-marcarVip" title="Marcar Vip"></a>
+			</nav>
+		</section>
+
+		<!-- Fim Admin only -->
+
 		<section id="marcarWrapper">
 			<nav>
 				<a href="#" title="" id="bt-marcar"></a>
@@ -748,7 +757,6 @@
 						<button type="">Compartilhar no facebook</button>
 					</form>
 				</div>
-
 			</div>
 		</section>
 
@@ -900,8 +908,58 @@
 			</div>
 		</div>
 
+		<div id="tagVip" class="tagBox positionTest">
+			<a href="#" title="" class="tagBt"></a>
+			<div class="profile">
+				<header>
+					<span class="stars"></span>
+					<img src="img/controlBar-user.jpg" alt="">
+
+					<div>
+						<h1>Gustavo Marques Fernandes</h1>
+						<h3>Design Thinker</h3>
+					</div>
+				</header>
+				
+				<p class="quote">"Muito Legal esse jogo, inesquecível... Ver meu time vencer de goleada, na presença da mulher que eu amo e minha filha, é simplesmente incrível!"</p>
+				
+				<nav class="user">
+					<a href="#" title="">Remover Tag</a>
+				</nav>
+
+				<a href="#" title="" class="bt-close">&#xe647</a>
+			</div>
+		</div>
+
 	</div>
+
+
+
+<!-- /modal AdminOnly logout -->
+	<div class="md-modal md-effect" id="modal-marcarVip">
+		<div class="md-content">
+			<header>
+				<h1>Marcar VIP</h1>
+				<a href="#" title="" class="md-close">&#xe647</a>
+			</header>
+			<div class="content">
+				<h1>Insira os campos abaixo para efetuar a marcação.</h1>
+
+				<form>
+					<input type="text" placeholder="nome do artista">
+					<input type="text" placeholder="Profissão">
+					<textarea placeholder="Descrição, recomendado 140 caracteres (twitter profile por exemplo)"></textarea>
+					<input type="file" class="file" name="file" />
+					<button>Enviar mensagem</button>
+				</form>
+			</div>
+		</div>
+	</div>
+<!-- /modal AdminOnly end logout -->
+
+
 <!-- /container end -->
+
 	<div id="pano">
 		<script src="vtour/tour.js"></script>
 

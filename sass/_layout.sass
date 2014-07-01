@@ -16,7 +16,7 @@ body .container
 	left: 0
 	right: 0
 	bottom: 0
-	background: url(img/temp/pano2.jpg) center center no-repeat
+	//background: url(img/temp/pano2.jpg) center center no-repeat
 	+bgCover
 	z-index: -1
 
@@ -146,12 +146,14 @@ body .container
 	position: fixed
 	top: 0
 	bottom: 0
-	left: 0
+	left: -240px
 	width: 240px
 	background: $corBg
 	display: block
 	z-index: 98
-
+	+transition
+	&.open
+		left: 0
 	*
 		+fontRegular
 		color: $corTexto
@@ -244,6 +246,7 @@ body .container
 			opacity: 0.7
 			padding-left: 60px
 			position: relative
+			+box-sizing(border-box)
 
 			&:before
 				+fontIcon
@@ -433,13 +436,13 @@ body .container
 							font-size: 28px
 							+fontBold
 							line-height: 140%
-							margin-bottom: 20px
+							margin-bottom: 18px
 							text-transform: uppercase
 
 	&:hover
 		#infos
 			& > section
-				height: 380px
+				height: 450px
 
 #topButtons
 	position: fixed
@@ -507,7 +510,7 @@ body .container
 
 #viewTags
 	position: fixed
-	bottom: 280px
+	bottom: 300px
 	right: 80px
 	width: 40px
 	height: 110px
@@ -522,9 +525,34 @@ body .container
 		&.active
 			opacity: 1
 
+#adminOnly
+	position: fixed
+	width: auto
+	max-width: 700px
+	height: 140px
+	bottom: 170px
+	+translate(-50%)
+	left: 50%
+	
+	nav
+		display: block
+		width: 100%
+		height: 140px
+		float: none	
+		a
+			display: inline-block
+			width: 120px
+			height: 120px
+			margin: 10px
+			background: url(img/marcar-vip.png) center center no-repeat
+
+
+			&#bt-marcar-vip
+				background-image: url(img/marcar-vip-hover.png)
+
 #marcarWrapper
 	position: fixed
-	bottom: 00px
+	bottom: 0px
 	width: 120px
 	left: 50%
 	margin-left: -60px
@@ -536,25 +564,27 @@ body .container
 	nav
 		a
 			display: block
-			width: 100px
-			height: 100px
+			width: 120px
+			height: 120px
 			cursor: pointer
 			opacity: 0
-			margin: 10px
 			background-position: center center
 			background-repeat: no-repeat
+			+border-radius(50%)
 			&.active
 				opacity: 1
 
 		a#bt-marcar
 			background-image: url(img/marcarOnly-btOn.png)
 
+
+
 	#marcarContent
 		position: fixed
 		top: 50%
 		left: 50%
 		max-width: 700px
-		min-width: 480px
+		min-width: 270px
 		height: auto
 		z-index: 2000
 		padding: 20px 20px 30px 20px
@@ -1020,6 +1050,7 @@ body .container
 					+fontLight
 					font-size: 26px
 					text-align: center
+					padding: 0 60px
 
 				a.bt-voltar
 					font-size: 30px
@@ -1415,6 +1446,20 @@ body .container
 				button
 					float: right
 
+	&#modal-marcarVip
+		.content
+			form
+				input, textarea
+					margin-top: 20px
+
+				input[type="file"]
+					+appearance(none)
+					background: $branco
+					line-height: 1px
+					padding: 10px
+
+				button
+					float: right
 
 // ------------------------------------------------------------------
 // Alert modal - Like por exemplo
@@ -1643,21 +1688,21 @@ body .container
 			margin-left: -370px
 			width: 740px
 			height: 340px
-			background-image: url(img/help/marcar.png)
+			background-image: url(img/help/marcar-semSnap.png)
 
 		&.help-kr
 			bottom: 0
 			right: 0
 			width: 300px
-			height: 400px
-			background-image: url(img/help/kr-controls.png)
+			height: 480px
+			background-image: url(img/help/kr-controls2.png)
 
-		&.help-top-buttons
-			top: 0
-			right: 0
-			width: 210px
-			height: 250px
-			background-image: url(img/help/top-buttons.png)
+		//&.help-top-buttons
+		//	top: 0
+		//	right: 0
+		//	width: 210px
+		//	height: 250px
+		//	background-image: url(img/help/top-buttons.png)
 
 		&.help-placar
 			top: 70px
@@ -1854,7 +1899,89 @@ body .container
 	&.positionTest
 		position: fixed
 		top: 65%
-		right: 25%
+		right: 40%
+
+	&#tagVip
+		.tagBt
+			background: url(img/tagVip.png) top center no-repeat
+
+		&.positionTest
+			right: 20%
+
+		.profile
+		
+			header
+				display: block
+				position: relative
+				+clearfix
+				overflow: visible
+
+				span.stars
+					position: absolute
+					width: 200px
+					top: -70px
+					height: 100px
+					left: 50%
+					margin-left: -100px
+					background: url(img/stars.png) center center no-repeat
+					display: block
+
+				img
+					width: 100%
+					margin-right: 10px
+					height: auto
+					display: block
+					float: none
+					+border-radius(5px)
+
+				& > div
+					float: none
+					height: auto
+					position: absolute
+					bottom: 0
+					background: $corBg
+					+box-sizing(border-box)
+					width: 100%
+					padding: 10px 20px
+
+					h1
+						font-size: 30px
+						margin-bottom: 10px
+						text-align: center
+						white-space: nowrap
+						overflow: hidden
+						text-overflow: ellipsis
+						display: block
+						width: 100%
+
+					h3
+						opacity: 0.8
+						font-size: 16px
+						margin: 0
+						text-align: center
+
+			.quote
+				font-size: 17px
+				line-height: 150%
+
+			.bt-close
+				+fontIcon
+				width: 30px
+				height: 30px
+				padding: 5px
+				background: $corBg
+				display: block
+				position: absolute
+				top: -20px
+				right: -20px
+				pointer-events: all
+				z-index: 2
+				color: $corTexto
+				+border-radius(50%)
+				font-size: 30px
+				&:hover
+					color: $corPrincipal
+
 
 
 
@@ -1946,7 +2073,7 @@ body .container
 	min-height: 307px
 	height: auto
 	width: 650px
-	margin-left: -350px
+	margin-left: -325px
 	margin-top: -165px
 	z-index: 2000
 	+border-radius(10px)

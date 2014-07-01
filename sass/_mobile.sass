@@ -1,0 +1,378 @@
+
+// ------------------------------------------------------------------
+// IPHONE
+// ------------------------------------------------------------------ 
+
+@media (max-width: 600px) and (orientation: portrait)
+
+	#logo, #krControls
+		display: none
+
+	#viewTags
+		bottom: 10px
+		right: 10px
+		width: 86px
+		height: 41px
+		background: url(img/tagsOff-mobile.png) center center no-repeat
+
+		a
+			display: block
+			width: 86px
+			height: 41px
+			background: url(img/tagsOn-mobile.png) center center no-repeat
+
+	#topButtons
+		left: 10px
+		text-align: center
+		display: none
+
+	#placarWrapper
+		top: 10px
+
+	#btUser
+		top: auto
+		bottom: 10px
+		z-index: 1000
+		&.open
+			left: 10px
+
+
+	#userNav
+		position: fixed
+		top: 100%
+		bottom: 0
+		right: 0
+		left: 0
+		padding-bottom: 160px
+		width: auto
+		z-index: 999
+		
+		&.open
+			top: 0
+
+		#user
+			width: 50%
+			height: 170px
+			overflow: hidden
+			display: block
+			float: left
+			img
+				width: 100%
+
+		#amigos
+			width: 50%
+			height: 172px
+			overflow: hidden
+			display: block
+			float: left
+			+box-sizing(border-box)
+			padding: 30px 20px
+			border-size: 2px
+			background: $corBg
+
+			p
+				padding: 0
+
+		nav
+			top: 172px
+			padding-top: 8px
+			background: $corBg
+
+	#placarWrapper
+		z-index: 987
+
+	#topButtons
+		#btHelp
+			display: none
+
+	.tagBox
+		z-index: 988
+
+	.md-modal, .md-modal.md-scroll
+		left: 10px
+		top: 10px
+		right: 10px
+		bottom: 10px
+		+translate(0)
+		width: auto
+		min-width: auto
+
+		.md-content
+			> .content
+				padding: 10px
+				.step
+					left: 20px
+					top: 20px
+					bottom: 20px
+					right: 20px
+
+					header
+						padding: 0 40px
+						font-size: 22px
+
+
+					.preview
+						img
+							display: none
+						h1, p
+							padding: 10px 20px
+
+	.md-modal
+		&#modal-share 
+			.content
+				height: 400px
+				.step.share-tipo > a
+					width: 100%
+					margin: 10px 0 20px 0
+					font-size: 40px
+					float: left
+					font-size: 20px
+					position: relative
+
+					span
+						width: 40px
+						line-height: 40px
+						padding: 0
+						font-size: 40px
+						position: absolute
+
+		&#modal-feedback
+			.content
+				form
+					input
+						width: 100%
+						margin-left: 0 !important
+						margin-bottom: 20px
+
+		&#modal-maisMegas
+			.content
+				> nav a
+					padding: 20px
+					opacity: 1
+					background: $corBg
+					overflow: hidden
+
+					img
+						width: 100%
+						z-index: -1
+
+	#marcarWrapper
+		width: 80px
+		height: 100px
+		background: url(img/marcarOnly-bt-mobile.png) center center no-repeat
+		margin-left: -40px
+
+		nav a#bt-marcar
+			width: 70px
+			height: 70px
+			margin: 5px
+			background: url(img/marcarOnly-btOn-mobile.png) center center no-repeat
+
+		&.active
+			z-index: 999
+		
+		#marcarContent
+			top: -2px
+			left: 10px
+			right: 10px
+			+translate(0)
+			background: rgba(0,0,0,0.9)
+
+			&.show
+				z-index: 2000
+
+			.step
+				header h1
+					font-size: 25px
+
+			.step.marcar-amigo form
+				h1
+					font-size: 17px
+					margin-top: 20px
+				input, button
+					width: 250px
+				button
+					margin: 40px 0 0 0
+
+			.step.marcar-time
+				& > a
+					margin: 40px 20px 20px 20px
+					min-width: 90px
+				form
+					padding: 20px 0 0 0
+					input
+						width: 170px
+
+				.twitter-typeahead
+					width: 170px
+
+			.step.share-facebook
+				header
+					h1
+						font-size: 18px
+
+				.preview
+					img
+						display: none
+					h1, p
+						padding: 10px 20px
+
+				button
+					float: none
+
+	#welcome
+		top: 70px
+		left: 10px
+		right: 10px
+		min-width: 400px
+		+translate(0)
+		margin: 0
+		min-width: 320px
+		width: 300px
+		section
+			nav
+				a
+					font-size: 18px
+					margin: 20px 0
+			h2
+				font-size: 20px
+				margin-bottom: 10px
+				+fontBold
+		nav.apoio
+			bottom: -120px
+			left: -100px
+			right: -100px
+			h1
+				display: none
+		header
+			.logo
+				top: -50px
+
+
+@media (max-width: 600px) and (orientation: landscape)
+	#logo, #krControls, #placarWrapper, #btUser, #marcarWrapper, #viewTags, #userNav
+		display: none
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// Tablet
+// ------------------------------------------------------------------ 
+
+@media all and (max-width: 1000px) and (min-width: 601px)
+	.md-modal.md-scroll
+		top: 90px
+		left: 40px
+		right: 40px
+		bottom: 170px
+		+translate(0)
+		width: auto
+		min-width: auto
+	
+	.md-modal
+		width: 90%
+
+	.md-overlay
+		background: rgba(0,0,0,0.8)
+
+	#topButtons
+		#btFullscreen
+			display: none
+
+	#help-overlay
+		span
+			&.help-top-buttons
+				background-image: url(img/help/mobile-top-buttons.png)
+
+			&.help-kr
+				background-image: url(img/help/mobile-viewTags.png)
+
+			&.help-marcar
+				background-image: url(img/help/marcar-semSnap.png)
+
+	#krControls
+		display: none
+
+	#viewTags
+		bottom: 20px
+		right: 20px
+		width: 86px
+		height: 41px
+		background: url(img/tagsOff-mobile.png) center center no-repeat
+
+		a
+			display: block
+			width: 86px
+			height: 41px
+			background: url(img/tagsOn-mobile.png) center center no-repeat
+	
+	#marcarWrapper
+		#marcarContent
+			width: 480px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

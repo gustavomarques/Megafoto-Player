@@ -21,10 +21,10 @@ $(document).ready(function() {
 
 	$( '#btUser' ).click( function(){
 		if( $(this).hasClass('open') ){
-			$('#userNav').stop().animate({left : '-240px'}, 300);
+			$('#userNav').removeClass( "open" );
 			$(this).removeClass('open');
 		}else{
-			$('#userNav').stop().animate({left : '0'}, 200);
+			$('#userNav').addClass( "open" );
 			$(this).addClass('open');
 		}
 
@@ -143,9 +143,9 @@ $( '#bt-snap' ).click( function(){
 	$( this ).addClass( "active" );
 });
 
-
 $( '#bt-marcar' ).click( function(){
 	$( this ).addClass( "active" );
+	$( this ).closest('#marcarWrapper').addClass('active');
 });
 
 
@@ -172,6 +172,7 @@ $( '#marcarWrapper nav a' ).click( function(){
 
 $( '#marcarContent .bt-close' ).click( function(){
 	$('#marcarContent').removeClass('show');
+	$('#marcarWrapper').removeClass('active');
 	$('#bt-marcar').removeClass('active');
 });
 
@@ -243,3 +244,12 @@ $(document).ready(function () {
 
     });
 });
+
+
+
+
+
+
+
+
+$("#modal-amigos, #modal-curtir, #modal-share, #modal-maisMegas, #modal-logout, #modal-feedback").hide();

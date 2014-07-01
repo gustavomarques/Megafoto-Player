@@ -6,9 +6,9 @@ $branco: #fff
 $preto: #2c2c2c
 $black: #000
 
-$azul: #00a4e0
-$azulEscuro: #003e54
-$amarelo: #f4ff00
+$azul: #1171ad
+$azulEscuro: #0c4f79
+$amarelo: #fff840
 $roxo: #a626ff
 $verdeLimao: #8cff26
 $magenta: #ff2687
@@ -99,18 +99,12 @@ $corFundoScroll: $cinzaEscuro
 
 @mixin fontLight
 	font-family: 'antoniolight'
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
 	
 @mixin fontRegular
 	font-family: 'antonioregular'
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
 
 @mixin fontBold
 	font-family: 'antoniobold'
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
 
 
 // ------------------------------------------------------------------
@@ -282,6 +276,10 @@ input[type="submit"], input[type="button"], button, .button3d
 	+button3d
 	margin-top: 20px
 
+
+input[type="file"]
+	+appearance(none)
+	
 
 @mixin uploadBt
 	background: $brancoCinza
