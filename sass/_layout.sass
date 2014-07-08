@@ -1917,87 +1917,92 @@ body .container
 		top: 65%
 		right: 40%
 
-	&#tagVip
+	&.tagVip
 		.tagBt
 			background: url(img/tagVip.png) top center no-repeat
-
+		
 		&.positionTest
 			right: 20%
 
-		.profile
+		header div h3
+			+fontRegular
+			font-size: 18px
+			padding-top: 10px
+			display: block
+			border-top: 1px solid rgba($brancoCinza, 0.3)
 
-			header
-				display: block
-				position: relative
-				+clearfix
-				overflow: visible
-
-				span.stars
-					position: absolute
-					width: 200px
-					top: -70px
-					height: 100px
-					left: 50%
-					margin-left: -100px
-					background: url(img/stars.png) center center no-repeat
-					display: block
-
-				img
-					width: 100%
-					margin-right: 10px
-					height: auto
-					display: block
-					float: none
-					+border-radius(5px)
-
-				& > div
-					float: none
-					height: auto
-					position: absolute
-					bottom: 0
-					background: $corBg
-					+box-sizing(border-box)
-					width: 100%
-					padding: 10px 20px
-
-					h1
-						font-size: 30px
-						margin-bottom: 10px
-						text-align: center
-						white-space: nowrap
-						overflow: hidden
-						text-overflow: ellipsis
-						display: block
-						width: 100%
-
-					h3
-						opacity: 0.8
-						font-size: 16px
-						margin: 0
-						text-align: center
-
-			.quote
-				font-size: 17px
-				line-height: 150%
-
-			.bt-close
-				+fontIcon
-				width: 30px
-				height: 30px
-				padding: 5px
-				background: $corBg
-				display: block
-				position: absolute
-				top: -20px
-				right: -20px
-				pointer-events: all
-				z-index: 2
-				color: $corTexto
-				+border-radius(50%)
-				font-size: 30px
-				&:hover
-					color: $corPrincipal
-
+//
+//		.profile
+//			header
+//				display: block
+//				position: relative
+//				+clearfix
+//				overflow: visible
+//
+//				span.stars
+//					position: absolute
+//					width: 200px
+//					top: -70px
+//					height: 100px
+//					left: 50%
+//					margin-left: -100px
+//					background: url(img/stars.png) center center no-repeat
+//					display: block
+//
+//				img
+//					width: 100%
+//					margin-right: 10px
+//					height: auto
+//					display: block
+//					float: none
+//					+border-radius(5px)
+//
+//				& > div
+//					float: none
+//					height: auto
+//					position: absolute
+//					bottom: 0
+//					background: $corBg
+//					+box-sizing(border-box)
+//					width: 100%
+//					padding: 10px 20px
+//
+//					h1
+//						font-size: 30px
+//						margin-bottom: 10px
+//						text-align: center
+//						white-space: nowrap
+//						overflow: hidden
+//						text-overflow: ellipsis
+//						display: block
+//						width: 100%
+//
+//					h3
+//						opacity: 0.8
+//						font-size: 16px
+//						margin: 0
+//						text-align: center
+//			.quote
+//				font-size: 17px
+//				line-height: 150%
+//			.bt-close
+//				+fontIcon
+//				width: 30px
+//				height: 30px
+//				padding: 5px
+//				background: $corBg
+//				display: block
+//				position: absolute
+//				top: -20px
+//				right: -20px
+//				pointer-events: all
+//				z-index: 2
+//				color: $corTexto
+//				+border-radius(50%)
+//				font-size: 30px
+//				&:hover
+//					color: $corPrincipal
+//
 
 
 

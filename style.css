@@ -2049,94 +2049,78 @@ body .container.show > * { -webkit-animation: fadeIn 0.5s 0.7s ease both; -moz-a
 /* line 1915, sass/_layout.sass */
 .tagBox.positionTest { position: fixed; top: 65%; right: 40%; }
 /* line 1921, sass/_layout.sass */
-.tagBox#tagVip .tagBt { background: url(img/tagVip.png) top center no-repeat; }
+.tagBox.tagVip .tagBt { background: url(img/tagVip.png) top center no-repeat; }
 /* line 1924, sass/_layout.sass */
-.tagBox#tagVip.positionTest { right: 20%; }
-/* line 1929, sass/_layout.sass */
-.tagBox#tagVip .profile header { display: block; position: relative; overflow: hidden; *zoom: 1; overflow: visible; }
-/* line 1935, sass/_layout.sass */
-.tagBox#tagVip .profile header span.stars { position: absolute; width: 200px; top: -70px; height: 100px; left: 50%; margin-left: -100px; background: url(img/stars.png) center center no-repeat; display: block; }
-/* line 1945, sass/_layout.sass */
-.tagBox#tagVip .profile header img { width: 100%; margin-right: 10px; height: auto; display: block; float: none; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
-/* line 1953, sass/_layout.sass */
-.tagBox#tagVip .profile header > div { float: none; height: auto; position: absolute; bottom: 0; background: rgba(0, 0, 0, 0.7); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; padding: 10px 20px; }
-/* line 1963, sass/_layout.sass */
-.tagBox#tagVip .profile header > div h1 { font-size: 30px; margin-bottom: 10px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; width: 100%; }
-/* line 1973, sass/_layout.sass */
-.tagBox#tagVip .profile header > div h3 { opacity: 0.8; font-size: 16px; margin: 0; text-align: center; }
-/* line 1979, sass/_layout.sass */
-.tagBox#tagVip .profile .quote { font-size: 17px; line-height: 150%; }
-/* line 1983, sass/_layout.sass */
-.tagBox#tagVip .profile .bt-close { font-family: "mf-player"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 30px; height: 30px; padding: 5px; background: rgba(0, 0, 0, 0.7); display: block; position: absolute; top: -20px; right: -20px; pointer-events: all; z-index: 2; color: #f7f7f7; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; font-size: 30px; }
-/* line 1998, sass/_layout.sass */
-.tagBox#tagVip .profile .bt-close:hover { color: #68ff40; }
+.tagBox.tagVip.positionTest { right: 20%; }
+/* line 1927, sass/_layout.sass */
+.tagBox.tagVip header div h3 { font-family: "antonioregular"; font-size: 18px; padding-top: 10px; display: block; border-top: 1px solid rgba(247, 247, 247, 0.3); }
 
-/* line 2014, sass/_layout.sass */
+/* line 2019, sass/_layout.sass */
 .pace { -webkit-pointer-events: none; pointer-events: none; -webkit-user-select: none; -moz-user-select: none; user-select: none; z-index: 9998; position: fixed; }
-/* line 2024, sass/_layout.sass */
+/* line 2029, sass/_layout.sass */
 .pace .pace-progress { position: fixed; z-index: 2000; top: 0; right: 0; left: 0; height: 100px; text-align: center; background: rgba(0, 0, 0, 0.2); width: 100%; }
-/* line 2034, sass/_layout.sass */
+/* line 2039, sass/_layout.sass */
 .pace .pace-progress:after { display: block; position: fixed; top: 0; right: 0; left: 0; text-align: center; content: attr(data-progress-text); font-family: "Helvetica Neue", sans-serif; font-weight: 100; font-size: 100px; line-height: 100%; color: #f7f7f7; }
 
-/* line 2048, sass/_layout.sass */
+/* line 2053, sass/_layout.sass */
 .pace-inactive { -webkit-animation: bounceOutUp 0.5s 0.1s ease both; -moz-animation: bounceOutUp 0.5s 0.1s ease both; -ms-animation: bounceOutUp 0.5s 0.1s ease both; -o-animation: bounceOutUp 0.5s 0.1s ease both; animation: bounceOutUp 0.5s 0.1s ease both; }
 
-/* line 2052, sass/_layout.sass */
+/* line 2057, sass/_layout.sass */
 #splash { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 9997; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -webkit-transition-property: all; -moz-transition-property: all; -o-transition-property: all; transition-property: all; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
-/* line 2063, sass/_layout.sass */
-#splash > img { height: 100%; position: absolute; z-index: 3; }
 /* line 2068, sass/_layout.sass */
+#splash > img { height: 100%; position: absolute; z-index: 3; }
+/* line 2073, sass/_layout.sass */
 #splash .dot { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 1; }
 
-/* line 2080, sass/_layout.sass */
+/* line 2085, sass/_layout.sass */
 .pace-done #splash { -webkit-animation: slideOutDown 1s 0.5s ease both; -moz-animation: slideOutDown 1s 0.5s ease both; -ms-animation: slideOutDown 1s 0.5s ease both; -o-animation: slideOutDown 1s 0.5s ease both; animation: slideOutDown 1s 0.5s ease both; }
 
-/* line 2083, sass/_layout.sass */
+/* line 2088, sass/_layout.sass */
 #welcome { display: block; position: fixed; top: 50%; left: 50%; min-width: 480px; min-height: 307px; height: auto; width: 650px; margin-left: -325px; margin-top: -165px; z-index: 2000; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; background: rgba(0, 0, 0, 0.6); text-align: center; z-index: 9999; -webkit-transition-property: all; -moz-transition-property: all; -o-transition-property: all; transition-property: all; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; -webkit-animation: scaleIn 0.5s 2s ease both; -moz-animation: scaleIn 0.5s 2s ease both; -ms-animation: scaleIn 0.5s 2s ease both; -o-animation: scaleIn 0.5s 2s ease both; animation: scaleIn 0.5s 2s ease both; }
-/* line 2103, sass/_layout.sass */
+/* line 2108, sass/_layout.sass */
 #welcome *:not(a) { color: #f7f7f7; }
-/* line 2106, sass/_layout.sass */
+/* line 2111, sass/_layout.sass */
 #welcome p:last-child { margin: 0; }
-/* line 2110, sass/_layout.sass */
+/* line 2115, sass/_layout.sass */
 #welcome header .logo { position: absolute; width: 300px; height: 40px; display: block; top: -60px; left: 50%; margin-left: -150px; }
-/* line 2119, sass/_layout.sass */
-#welcome header h1 { text-transform: uppercase; padding: 20px 0; margin: 0; }
 /* line 2124, sass/_layout.sass */
+#welcome header h1 { text-transform: uppercase; padding: 20px 0; margin: 0; }
+/* line 2129, sass/_layout.sass */
 #welcome section { padding: 20px; }
-/* line 2127, sass/_layout.sass */
-#welcome section h2 { margin: 0; font-family: "antoniolight"; font-size: 32px; }
 /* line 2132, sass/_layout.sass */
+#welcome section h2 { margin: 0; font-family: "antoniolight"; font-size: 32px; }
+/* line 2137, sass/_layout.sass */
 #welcome section nav { text-align: center; }
-/* line 2134, sass/_layout.sass */
+/* line 2139, sass/_layout.sass */
 #welcome section nav a { display: inline-block; position: relative; min-width: 140px; height: auto; margin: 30px; padding: 20px; opacity: 0.9; background: rgba(255, 255, 255, 0.85); color: #2c2c2c; font-size: 20px; text-align: center; text-transform: uppercase; font-family: "antoniolight"; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -10px 0 0 inset; -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -10px 0 0 inset; box-shadow: rgba(0, 0, 0, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -10px 0 0 inset; opacity: 0.8; font-family: "antonioregular"; }
 /* line 62, sass/_mixins.sass */
 #welcome section nav a span { font-family: "mf-player"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: block; font-size: 80px; text-align: center; line-height: 100%; margin-top: -10px; padding-bottom: 10px; }
 /* line 71, sass/_mixins.sass */
 #welcome section nav a:hover { opacity: 1; background: white; -webkit-box-shadow: rgba(42, 133, 17, 0.7) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; -moz-box-shadow: rgba(42, 133, 17, 0.7) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; box-shadow: rgba(42, 133, 17, 0.7) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; }
-/* line 2137, sass/_layout.sass */
+/* line 2142, sass/_layout.sass */
 #welcome section nav a.fb { background: #3b579d; color: #f7f7f7; }
-/* line 2141, sass/_layout.sass */
+/* line 2146, sass/_layout.sass */
 #welcome section nav a.fb:hover { -webkit-box-shadow: rgba(255, 255, 255, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; -moz-box-shadow: rgba(255, 255, 255, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; box-shadow: rgba(255, 255, 255, 0.8) 0 0px 0 15px, rgba(0, 0, 0, 0.2) 0 -5px 0 0 inset; }
-/* line 2143, sass/_layout.sass */
+/* line 2148, sass/_layout.sass */
 #welcome nav.apoio { position: absolute; bottom: -150px; text-align: center; left: -20px; right: -20px; height: 112px; display: block; }
-/* line 2151, sass/_layout.sass */
+/* line 2156, sass/_layout.sass */
 #welcome nav.apoio h1 { font-size: 16px; display: block; margin-bottom: 0; }
-/* line 2155, sass/_layout.sass */
+/* line 2160, sass/_layout.sass */
 #welcome nav.apoio a { display: inline-block; width: 400px; height: 50px; -webkit-transform: scale(0.6, 0.6); -moz-transform: scale(0.6, 0.6); -ms-transform: scale(0.6, 0.6); -o-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); }
-/* line 2161, sass/_layout.sass */
+/* line 2166, sass/_layout.sass */
 #welcome nav.apoio a:hover { -webkit-transform: scale(1, 1); -moz-transform: scale(1, 1); -ms-transform: scale(1, 1); -o-transform: scale(1, 1); transform: scale(1, 1); }
-/* line 2164, sass/_layout.sass */
+/* line 2169, sass/_layout.sass */
 #welcome a.language { text-transform: uppercase; display: block; padding: 10px 0; color: #f7f7f7; line-height: 20px; background: rgba(0, 0, 0, 0.3); -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -ms-border-radius: 0 0 10px 10px; -o-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px; }
-/* line 2172, sass/_layout.sass */
-#welcome a.language img { margin-right: 10px; display: inline-block; height: 20px; }
 /* line 2177, sass/_layout.sass */
-#welcome a.language:hover { background: #f7f7f7; color: #2c2c2c; }
+#welcome a.language img { margin-right: 10px; display: inline-block; height: 20px; }
 /* line 2182, sass/_layout.sass */
+#welcome a.language:hover { background: #f7f7f7; color: #2c2c2c; }
+/* line 2187, sass/_layout.sass */
 #welcome.hide { -webkit-animation: scaleBigOut 0.5s 0.1s ease both; -moz-animation: scaleBigOut 0.5s 0.1s ease both; -ms-animation: scaleBigOut 0.5s 0.1s ease both; -o-animation: scaleBigOut 0.5s 0.1s ease both; animation: scaleBigOut 0.5s 0.1s ease both; }
 
-/* line 2192, sass/_layout.sass */
+/* line 2197, sass/_layout.sass */
 #testes { position: fixed; display: block; width: 600px; left: 0; bottom: 0; z-index: 2000; background: rgba(131, 0, 0, 0.9); padding: 10px; height: auto; }
-/* line 2203, sass/_layout.sass */
+/* line 2208, sass/_layout.sass */
 #testes a { color: white; display: inline-block; padding: 10px; margin: 10px; background: rgba(0, 0, 0, 0.7); }
 
 /* line 2, sass/_layout-en.sass */

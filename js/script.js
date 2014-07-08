@@ -257,4 +257,4 @@ $(document).ready(function () {
 
 
 
-//$("#modal-amigos, #modal-curtir, #modal-share, #modal-maisMegas, #modal-logout, #modal-feedback").hide();
+$("#modal-amigos, #modal-curtir, #modal-share, #modal-maisMegas, #modal-logout, #modal-feedback").hide();
